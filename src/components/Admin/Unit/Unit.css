@@ -1,0 +1,188 @@
+
+  .Unitadd-btnWrappper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   width:100%;
+}
+.Unitadd-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2px;
+    width:4rem; 
+    background-color: #1a1a5e;
+ 
+}
+.Unitadd-btn:hover{
+    background-color:rgb(5, 5, 79) ;
+}
+.unit-title{
+    padding: 10px 50px;
+    color: #081729;
+}
+/* Table container */
+.unitTable-wrapper {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 80vh; /* Adjust height to fit page */
+    width: 100%;
+    padding: 10px;
+}
+
+/* Table styling */
+table {
+    width: 70%; /* Adjust width */
+    max-width: 900px; /* Limit max width */
+    margin-bottom: 60px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Table headers */
+thead th {
+    background-color: #1e293b; /* Light gray header */
+    color: white;
+    font-weight: 700;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Table body */
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    height: 20px; /* Row height */
+    text-align: center;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Table cells */
+td {
+
+    font-size: 0.9rem;
+}
+
+/* Action buttons */
+.action-box {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionedit-btn {
+    background-color: #1d2a74; 
+    color: white;
+    border: none;
+    width: 40px;
+    padding: 3px 8px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actiondelete-btn {
+    background-color: #3939a6; 
+    width:60px;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.actionedit-btn:hover{
+    background-color: #3939a6; 
+    cursor: pointer;
+}
+.actiondelete-btn:hover{
+    background-color: #1d2a74; 
+}
+/* Add button */
+.add-btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+}
+.unit-container{
+  
+    border-radius: 12px;
+   
+
+}
+/* model */
+.editmodel-close{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.unitmodel-wrapper{
+    position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #00000080;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+
+
+.unit-model{
+    display: flex;
+    flex-direction: column;
+    height:15rem;
+    width:15rem;
+    background: #f9fbfc;
+    color: #0f1f32;
+    padding: 30px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px #0003;
+    position: relative;
+}
+.unitmodel-input{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+}
+.unitmodel-input input{
+    height:34px;
+}
+.unitmodel-addbtn{
+    background-color: #1a1a5e;
+    color: #f9fbfc;
+}
+.unitmodel-addbtn:hover{
+    background-color:#2f2e4b ;
+    color: #8e8e94;
+}
+.unitmodel-closebtn:hover{
+    cursor: pointer;
+
+}

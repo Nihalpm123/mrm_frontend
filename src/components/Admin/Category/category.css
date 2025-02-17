@@ -1,0 +1,66 @@
+.addcategory-form{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding:0.9em 0.7em;
+    gap:4px;
+    
+}
+.categoryimage-add{
+    color: #060d17;
+}
+.addcategory-wrapper{
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    right: 0;
+    bottom: 0;
+    background-color: #00000080;
+    z-index: 1000;
+    height:21em;
+    width:21em;
+    background-color:#334155;
+    border-radius: 12px;
+    color: rgb(226, 239, 239);   
+   
+}
+.hascategory{
+    display: flex;
+
+}
+.hascategory-checkbox{
+    width:15px;
+    height:15px;
+}
+.addcategory-btn{
+    background-color: #949aa3;
+}
+.addcategory-btn:hover{
+    background-color: white;
+    color: #060d17;
+}
+.upper-addbox{
+    display: flex;
+    justify-content: flex-end;
+    width:100%;
+    padding-right: 2em;
+}
+.categoryname{
+    color:black;
+}
+.categoryImage{
+    height:50px;
+    width:50px;
+    object-fit: cover;
+}
+
+.upper-addbtn{
+    width: 5em;
+    height: 2.6em;
+    background-color: #817e7e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: #817e7e 0.3s ease;
+}

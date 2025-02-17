@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import AdminLogin from './components/adminlogin/AdminLogin'
 import LoginPopUp from './components/loginpage/LoginPopUp'
 import SignUpPopUp from './components/signuppage/SignUpPopUp'
+import Admin from './components/Admin/Admin'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path='/usersignup' element={<SignUpPopUp/>}/>
           <Route path='/userlogin' element={<LoginPopUp/>}/>
           <Route path='/adminlogin' element={<AdminLogin/>}/>
+          <Route path='/Admin/*' element={<Admin/>}/>
         </Routes>
       </BrowserRouter>
 

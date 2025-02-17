@@ -1,0 +1,77 @@
+.icon{
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 20px;
+}
+.icon_header{
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 26px;
+}
+.icon,.icon_header{
+    margin-right: 5px;
+}
+.header{
+    grid-area: header;
+    background-color:  rgb(152, 170, 229);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -3px rgba(0,0, 0,0.35);
+}
+.menu-icon{
+    display: none;
+}
+.dropdown{
+    position: relative;
+}
+.admin-icons{
+    background-color: black;
+    height:50px;
+    width:100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.admin-icons:hover{
+    background-color: rgb(32, 32, 92);
+}
+.admin-icon,.down-icon{
+    height:24px;
+    width:24px;
+    background-color: black;
+}
+.admin-icon:hover,.down-icon:hover{
+    background-color: rgb(32, 32, 92);
+}
+.dashboard-title{
+    color:rgb(36, 36, 71);
+    /* padding:13px; */
+}
+
+.outer-box{
+    display: flex;
+    height:100vh;
+    background-color: aliceblue;
+
+
+}
+.header-wrapper{
+ display: flex;
+ flex: 1;
+ flex-direction: column;
+}
+.header-box{
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(228, 235, 249);
+}
+/* .Routes{
+    display: flex;
+    flex:1;
+    padding:24px;
+    background-color: rgb(244, 242, 238);
+} */

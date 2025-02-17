@@ -1,0 +1,87 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1e293b; /* Dark Blue */
+  color: white;
+  transition: width 0.3s ease-in-out;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+.menutitle-inner{
+  gap:2px;
+}
+.menu-title {
+  display: flex;
+  padding:20px;
+  justify-content: space-between;
+  align-items: center;
+  gap:2px;
+
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  margin:0;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color:#1e293b;
+  transform: scale(1.1);
+}
+
+.toggle-btn:focus {
+  outline: none;
+}
+
+.menu-icon,
+.close-icon {
+  width: 25px;
+  height: 25px;
+  color: white; /* Make the icons clearly visible */
+  transition: color 0.2s ease-in-out;
+}
+
+.menu-icon:hover,
+.close-icon:hover {
+  color: #cbdde1; /* Light blue on hover */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .menu-item span {
+  display: none; /* Hide text when collapsed */
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.menu-item:hover {
+  background-color: #334155;
+  border-radius: 5px;
+}
+.sidebar.collapsed .menu-icon {
+  display: block; /* Ensures menu icon is shown */
+}
+.sidebar.collapsed .close-icon {
+  display: none; /* Hides close icon in collapsed mode */
+}

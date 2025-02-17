@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import './AdminLogin.css'
 import axios from 'axios'
 import { server } from '../../server'
+import { useNavigate } from 'react-router-dom'
 
 const AdminLogin = () => {
-
+   const Navigate=useNavigate()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -14,8 +15,11 @@ const AdminLogin = () => {
       username,
       password
     }).then((res)=>{
-     if(res.data.message === "Login Success"){
+      console.log(res);
+      
+     if(res.data.message === "Login success"){
       //navigation admin dashboard
+       Navigate("/Admin")
      }
       
     })
