@@ -10,6 +10,9 @@ const Category = () => {
   const [Hascategory, setHascategory] = useState(false);
   const [addcategoryOpen, setAddcategoryOpen] = useState(false);
 
+  const [editOpen, setEditOpen] = useState(false)
+  const [categoryId, setCategoryId] = useState("")
+
   useEffect(() => {
     axios
       .get(`${server}/get-category`)
@@ -42,6 +45,52 @@ const Category = () => {
       (data)=>data.filter((item)=>item._id!==id)
     ))
   }  
+
+
+  const handleEdit = (item)=>{
+    setEditOpen(true)
+    setCategoryname(item.categoryname)
+    setHascategory(item.Hascategory)
+    setCategoryImage(item.categoryImage)
+    setCategoryId(item._id)
+  }
+
+  const handleOpenEdit = (e)=> {
+    e.preventDefault();
+    const config = {
+      headers:{ "Content-Type": "multipart/form-data" }
+    }
+
+    const updateCategory = new FormData()
+
+    updateCategory.append("categoryname",categoryname)
+
+    if(categoryImage){
+      updateCategory.append("categoryImage", categoryImage)
+
+    }
+    updateCategory.append("Hascategory", Hascategory)
+    axios.patch(`${server}/edit-category/${categoryId}`,updateCategory,config).then((res)=>{
+      console.log(res);
+      
+     if(res.data.message === "category updated") {
+      const dataStore = res.data.updated
+      setCategory((prevData)=> {
+        return prevData.map((category)=>{
+          if(category._id === dataStore._id){
+            return {...Category,...dataStore}
+          }
+          return category
+        })
+      })
+
+
+      toast.success("category edited")
+      setEditOpen(false)
+     }
+      
+    });
+  }
   
 
   return (
@@ -54,9 +103,9 @@ const Category = () => {
           +Add
         </button>
       </div>
-      <div>
+      <div >
         {category && category.length > 0 ? (
-          <table>
+          <table className="category-table">
             <thead>
               <tr>
                 <th>Sl.No</th>
@@ -72,7 +121,7 @@ const Category = () => {
                      <td className="categoryname">{item.categoryname}</td>
                      <td><img src={item.categoryImage} className="categoryImage"/></td>
                      <td>
-                     <button onClick={()=>handleEdit}>Edit</button>
+                     <button onClick={()=>handleEdit(item)}>Edit</button>
                      <button onClick={()=>handleDelete(item._id)}>Delete</button>
                      {item.Hascategory===true?(
                       <button>handle manage</button>
@@ -124,8 +173,46 @@ const Category = () => {
           </form>
         </div>
       )}
+
+      {editOpen && (
+        <div className="addcategory-wrapper">
+          <form onSubmit={handleOpenEdit} className="addcategory-form">
+            <label>category name:</label>
+            <input
+              type="text"
+              value={categoryname}
+              onChange={(e) => setCategoryname(e.target.value)}
+              required
+            />
+            <label>category Image:</label>
+            <input
+              type="file"
+              accept=".jpg,.png,.jpeg"
+              className="categoryimage-add"
+              onChange={(e) => setCategoryImage(e.target.files[0])}
+          
+            />
+            <div className="hascategory">
+              <input
+                type="checkbox"
+                value={Hascategory}
+                className="hascategory-checkbox"
+                onChange={(e) => setHascategory(e.target.checked)}
+                
+              />
+              <p>Has subcategory</p>
+            </div>
+
+            <button type="submit" className="addcategory-btn">
+              Update Category
+            </button>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Category;
+
+
