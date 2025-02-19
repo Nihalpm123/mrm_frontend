@@ -1,9 +1,13 @@
 .addcategory-form{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    padding:0.9em 0.7em;
+    padding:0.9em 1.4em;
+    background-color: #293b56;
+    color: azure;
     gap:4px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px #0003;
+    position: relative;
     
 }
 .categoryimage-add{
@@ -13,17 +17,15 @@
 
 .addcategory-wrapper{
     position: fixed;
-    top: 30%;
-    left: 40%;
+    top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
     background-color: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
-    height:21em;
-    width:21em;
-    background-color:#334155;
-    border-radius: 12px;
-    color: rgb(226, 239, 239);   
    
 }
 .hascategory{
@@ -70,3 +72,32 @@
     width: 100%;
     margin: 10px 20px;
 }
+.modelclose-wrapper{
+    display: flex;
+}
+.modelclose-btn{
+    margin:0px 80%;
+    width:50px;
+    background-color: #293b56 ;
+    color: azure;
+}
+.modelclose-btn:hover{
+    background-color: #293b56 ;
+    color: azure;
+}
+.actionmanage-btn,.actionproduct-btn{
+    background-color: #515da7; 
+    color: white;
+    border: none;
+    width: auto;
+    padding: 3px 8px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.actionmanage-btn:hover,.actionproduct-btn:hover{
+    background-color: #8389ad;
+    
+}
+
+

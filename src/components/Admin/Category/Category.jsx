@@ -31,8 +31,7 @@ const Category = () => {
     axios.post(`${server}/add-category`, categoryForm, config).then((res) => {
       const response=res.data.category;
       setCategory((data)=>[response,...data])
-      
-      toast.success("Category added!...");
+       toast.success("Category added!...");
       setCategoryname("");
       setCategoryImage("");
       setHascategory(false);
@@ -120,13 +119,13 @@ const Category = () => {
                       <td>{index+1}</td>
                      <td className="categoryname">{item.categoryname}</td>
                      <td><img src={item.categoryImage} className="categoryImage"/></td>
-                     <td>
-                     <button onClick={()=>handleEdit(item)}>Edit</button>
-                     <button onClick={()=>handleDelete(item._id)}>Delete</button>
+                     <td className="action-box">
+                     <button onClick={()=>handleEdit(item)} className="actionedit-btn">Edit</button>
+                     <button onClick={()=>handleDelete(item._id)} className="actiondelete-btn">Delete</button>
                      {item.Hascategory===true?(
-                      <button>handle manage</button>
+                      <button className="actionmanage-btn">manage</button>
                       ):(
-                        <button>view product</button>
+                        <button className="actionproduct-btn">view product</button>
                       )}
                      </td>
                    </tr>
@@ -141,6 +140,7 @@ const Category = () => {
       {addcategoryOpen && (
         <div className="addcategory-wrapper">
           <form onSubmit={handleSubmit} className="addcategory-form">
+          <button className="modelclose-btn" onClick={()=>setAddcategoryOpen(!addcategoryOpen)}>X</button>
             <label>category name:</label>
             <input
               type="text"
@@ -177,6 +177,10 @@ const Category = () => {
       {editOpen && (
         <div className="addcategory-wrapper">
           <form onSubmit={handleOpenEdit} className="addcategory-form">
+            <div className="modelclose-wrapper">
+                <button className="modelclose-btn" onClick={()=>setEditOpen(!editOpen)}>X</button>
+            </div>
+            
             <label>category name:</label>
             <input
               type="text"

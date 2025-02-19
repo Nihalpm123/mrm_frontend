@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 // import Orders from "./Allorders/Orders";
 import { IoMdContact } from "react-icons/io";
 import Sidebar from "./Sidebar/Sidebar";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
 import { FaChevronDown } from "react-icons/fa";
 
@@ -23,27 +23,33 @@ const Admin = () => {
   const navigate = useNavigate();
 
   // Logout function
-  // const logout = () => {
-  //   localStorage.clear();
-  //   window.location.reload() // Clear stored data
-  //   navigate("/login"); // Redirect to login page
-  // };
+
+  const logout = () => {
+   
+    // const token= localStorage.getItem("token")
+    // if(!token){
+    //   navigate("/adminlogin");
+    // }
+    localStorage.clear();
+    // window.location.reload() // Clear stored data
+    navigate("/adminlogin");
+  };
 
   // Toggle Dropdown
-  // const toggleDropdown = () => {
-  //   setDropdownOpen(!dropdownOpen);
-  // };
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
   // Close dropdown when clicking outside
-  // useEffect(() => {
-  //   const handleOutsideClick = (e) => {
-  //     if (!e.target.closest(".dropdown")) {
-  //       setDropdownOpen(false);
-  //     }
-  //   };
-  //   document.addEventListener("click", handleOutsideClick);
-  //   return () => document.removeEventListener("click", handleOutsideClick);
-  // }, []);
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!e.target.closest(".dropdown")) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
 
   return (
     <div  className="outer-box">
@@ -60,7 +66,7 @@ const Admin = () => {
           {/* User Account Dropdown */}
           <div className="dropdown">
             <button
-              // onClick={toggleDropdown}
+              onClick={toggleDropdown}
               className="admin-icons"
             >
               < IoMdContact  className="admin-icon" />

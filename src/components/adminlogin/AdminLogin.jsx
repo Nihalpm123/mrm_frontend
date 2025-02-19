@@ -17,16 +17,18 @@ const AdminLogin = () => {
     }).then((res)=>{
       console.log(res);
       
-     if(res.data.message === "Login success"){
-      //navigation admin dashboard
+     if(res.data.token ){
+      localStorage.setItem("token",res.data.token)
        Navigate("/Admin")
+     }else{
+      Navigate("/adminlogin")
      }
       
     })
   
  
   }
-console.log(username);
+
 
 
   return (
