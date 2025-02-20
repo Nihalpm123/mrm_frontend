@@ -57,9 +57,16 @@
     display: flex;
     height:100vh;
     background-color: aliceblue;
-
-
 }
+
+.header-logout{
+    background-color: rgb(234, 75, 7);
+}
+
+.header-logout:hover{
+    background-color: rgb(250, 88, 19);
+}
+
 .header-wrapper{
  display: flex;
  flex: 1;

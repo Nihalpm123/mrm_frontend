@@ -37,11 +37,6 @@ button{
     border: none;
     width: 90%;
     color: #fff;
-    background: tomato;
-}
-
-button:hover{
-    background: rgb(239, 52, 19);
 }
 
 input:focus{

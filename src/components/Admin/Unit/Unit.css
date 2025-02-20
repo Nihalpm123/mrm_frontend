@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   width:100%;
+    width:99%;
 }
 .Unitadd-btn{
     display: flex;
@@ -26,15 +26,15 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    height: 80vh; /* Adjust height to fit page */
+    height: 89vh; /* Adjust height to fit page */
     width: 100%;
     padding: 10px;
 }
 
 /* Table styling */
 table {
-    width: 70%; /* Adjust width */
-    max-width: 900px; /* Limit max width */
+    width: 100%; /* Adjust width */
+     max-width: 1150px; /*Limit max width */
     margin-bottom: 60px;
     border-collapse: collapse;
     border-radius: 10px;
@@ -51,7 +51,7 @@ thead th {
     padding: 12px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 13px;
     border-bottom: 2px solid #ddd;
 }
 
@@ -68,7 +68,7 @@ tbody tr:last-child {
 
 /* Table cells */
 td {
-
+    margin: 10px 10px;
     font-size: 0.9rem;
 }
 
@@ -84,8 +84,8 @@ td {
     background-color: #1d2a74; 
     color: white;
     border: none;
-    width: 40px;
-    padding: 3px 8px;
+    width: 70px;
+    padding: 7px 11px;
     font-size: 0.9rem;
     border-radius: 5px;
     cursor: pointer;
@@ -93,20 +93,20 @@ td {
 
 .actiondelete-btn {
     background-color: #ac0505; 
-    width:60px;
+    width:70px;
     color: white;
     border: none;
-    padding: 3px 8px;
+    padding: 7px 11px;
     font-size: 0.9rem;
     border-radius: 5px;
     cursor: pointer;
 }
 .actionedit-btn:hover{
-    background-color: #3939a6; 
+    background-color: blue; 
     cursor: pointer;
 }
 .actiondelete-btn:hover{
-    background-color: #1d2a74; 
+    background-color: #e50808; 
 }
 /* Add button */
 .add-btn {

@@ -102,7 +102,7 @@ const Category = () => {
           +Add
         </button>
       </div>
-      <div >
+      <div className="category-main">
         {category && category.length > 0 ? (
           <table className="category-table">
             <thead>
@@ -123,9 +123,9 @@ const Category = () => {
                      <button onClick={()=>handleEdit(item)} className="actionedit-btn">Edit</button>
                      <button onClick={()=>handleDelete(item._id)} className="actiondelete-btn">Delete</button>
                      {item.Hascategory===true?(
-                      <button className="actionmanage-btn">manage</button>
+                      <button className="actionmanage-btn">Manage Sub Category</button>
                       ):(
-                        <button className="actionproduct-btn">view product</button>
+                        <button className="actionproduct-btn">View Product</button>
                       )}
                      </td>
                    </tr>

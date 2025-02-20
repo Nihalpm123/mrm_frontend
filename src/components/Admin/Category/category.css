@@ -2,12 +2,14 @@
     display: flex;
     flex-direction: column;
     padding:0.9em 1.4em;
-    background-color: #293b56;
-    color: azure;
-    gap:4px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px #0003;
+    background-color: #ffffff;
+    color: black;
+    gap:6px;
+    border-radius: 15px;
     position: relative;
+    -webkit-box-shadow: 2px 1px 50px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 1px 50px -2px rgba(0,0,0,0.75);
+    box-shadow: 2px 1px 50px -2px rgba(0,0,0,0.75);
     
 }
 .categoryimage-add{
@@ -21,12 +23,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #00000080;
+    background-color: #6d68684e;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-   
+
 }
 .hascategory{
     display: flex;
@@ -37,11 +39,11 @@
     height:15px;
 }
 .addcategory-btn{
-    background-color: #949aa3;
+    background-color: #5c6067;
 }
 .addcategory-btn:hover{
-    background-color: white;
-    color: #060d17;
+    background-color: rgb(99, 98, 98);
+    color: #ffffff;
 }
 .upper-addbox{
     display: flex;
@@ -52,8 +54,8 @@
     color:black;
 }
 .categoryImage{
-    height:50px;
-    width:50px;
+    height:80px;
+    width:80px;
     object-fit: cover;
 }
 
@@ -68,36 +70,38 @@
     transition: #817e7e 0.3s ease;
 }
 
+.upper-addbtn:hover{
+    background-color: #013f48;
+}
+
 .category-table{
-    width: 100%;
-    margin: 10px 20px;
+    margin: 20px 15px;
 }
 .modelclose-wrapper{
     display: flex;
 }
 .modelclose-btn{
-    margin:0px 80%;
-    width:50px;
-    background-color: #293b56 ;
-    color: azure;
+    margin:0px 90%;
+    width:25px;
+    color: rgb(255, 253, 253);
 }
 .modelclose-btn:hover{
-    background-color: #293b56 ;
+    background-color: #151414 ;
     color: azure;
 }
-.actionmanage-btn,.actionproduct-btn{
-    background-color: #515da7; 
+.actionmanage-btn, .actionproduct-btn{
+    background-color: #505052; 
     color: white;
     border: none;
     width: auto;
-    padding: 3px 8px;
+    padding: 7px 11px;
+    margin-bottom: 10px;
+    margin-top: 38px;
     font-size: 0.9rem;
     border-radius: 5px;
     cursor: pointer;
 }
 .actionmanage-btn:hover,.actionproduct-btn:hover{
-    background-color: #8389ad;
+    background-color: #747475;
     
 }
-
-

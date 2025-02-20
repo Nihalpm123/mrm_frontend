@@ -76,7 +76,7 @@ const Admin = () => {
               <div className="">
                 <button
                   onClick={logout}
-                  className=""
+                  className="header-logout"
                 >
                   Logout
                 </button>
