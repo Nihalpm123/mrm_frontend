@@ -13,9 +13,11 @@ import { FaChevronDown } from "react-icons/fa";
 // import SubCate from "./Category/SubCate";
 // import SubCateProduct from "./Category/SubCateProduct";
 // import Unit from "./Unit/Unit";
-import "./Admin.css"
-import Category from "./Category/category";
+import "./Admin.css";
 import Unit from "./Unit/Unit";
+import Product from "./Product/Product";
+import Subcategory from "./subcategory/Subcategory";
+import Category from "./Category/Category";
 
 const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -91,6 +93,9 @@ const Admin = () => {
           <Routes>
             <Route path="dashboard" element={<div>Dashboard</div>} />
              <Route path="category" element={<Category/>} />
+             <Route path="products" element={ <Product/>}/>
+             <Route path="Subcategory/:id" element={ <Subcategory/>}/>
+             <Route path="viewproducts/:id" element={<Product/>}/>
             {/* <Route path="orders" element={<Orders />} />
             <Route path="dealers" element={<AllUsers />} /> */}
             <Route path="unit" element={<Unit />}/> 

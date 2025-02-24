@@ -1,0 +1,27 @@
+.Productmodel-wrapper{
+    background-color: #6d68684e;
+    top:0;
+     left: 0; 
+    right: 0;
+    bottom: 0; 
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.productadd-form{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: black;
+    padding:9px 7px;
+    width:350px;
+    border-radius: 5%;
+    
+}
+.img-preview{
+    height:40px;
+    width:40px;
+}

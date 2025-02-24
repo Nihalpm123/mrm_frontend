@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { server } from "../../../server";
 import "./category.css";
 import { toast } from "react-toastify";
 const Category = () => {
+  const navigate=useNavigate()
   const [category, setCategory] = useState([]);
   const [categoryname, setCategoryname] = useState(null);
   const [categoryImage, setCategoryImage] = useState("");
@@ -16,7 +18,11 @@ const Category = () => {
   useEffect(() => {
     axios
       .get(`${server}/get-category`)
-      .then((res) => setCategory(res.data.getAllcategory));
+      .then((res) => {
+        const categoryWithoutSubcategory= res.data.getAllcategory.filter((category)=>
+        !category.subCategory || category.subCategory.trim()==="")
+        setCategory(categoryWithoutSubcategory)
+      });
   }, []);
 
   const handleSubmit = (e) => {
@@ -52,6 +58,14 @@ const Category = () => {
     setHascategory(item.Hascategory)
     setCategoryImage(item.categoryImage)
     setCategoryId(item._id)
+  }
+
+  const handleSubcategory=(id)=>{
+    navigate(`/admin/subcategory/${id}`)
+  }
+
+  const handleView=(id)=>{
+    navigate(`/admin/viewproducts/${id}`)
   }
 
   const handleOpenEdit = (e)=> {
@@ -123,9 +137,9 @@ const Category = () => {
                      <button onClick={()=>handleEdit(item)} className="actionedit-btn">Edit</button>
                      <button onClick={()=>handleDelete(item._id)} className="actiondelete-btn">Delete</button>
                      {item.Hascategory===true?(
-                      <button className="actionmanage-btn">Manage Sub Category</button>
+                      <button className="actionmanage-btn" onClick={()=>handleSubcategory(item._id)}>Manage Sub Category</button>
                       ):(
-                        <button className="actionproduct-btn">View Product</button>
+                        <button className="actionproduct-btn" onClick={()=>handleView(item._id)}>View Product</button>
                       )}
                      </td>
                    </tr>

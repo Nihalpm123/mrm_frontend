@@ -27,7 +27,7 @@ function Sidebar() {
     { icon: <BsFillGrid3X3GapFill />, label: "Categories", section: "category" },
     { icon: <BsCart3 />, label: "Orders", section: "orders" },
     { icon: <BsPeopleFill />, label: "Dealers", section: "dealers" },
-    { icon: <BsListCheck />, label: "Inventory", section: "inventory" },
+    { icon: <BsListCheck />, label: "Products", section: "Products" },
     { icon: <TbRulerMeasure />, label: "Unit", section: "unit" },
     { icon: <BsBagXFill />, label: "Disabled product", section: "disabled-product" },
     { icon: <BsExclamationCircle />, label: "Disabled variant", section: "disabled-product" },
