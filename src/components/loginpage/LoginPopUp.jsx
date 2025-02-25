@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import './LoginPopUp.css'
 import { server } from '../../server';
 import { toast } from 'react-toastify';
+import bg from '../../img/bg.svg'
 
 const LoginPopUp = () => {
 
@@ -27,49 +28,51 @@ const LoginPopUp = () => {
 
   return (
 
-    <>
-        <div className="wrappers">
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Username" required value={username} onChange={(e) => setUsername(e.target.value)}/>
-            <input type="password" placeholder="Your password" value={password} required onChange={(e) => setPassword(e.target.value)}/>
-            </form>
-            <button type='submit'>Login</button>
+    <div className="container">
+      <div className="forms-container">
+        <div className="signin-signup">
+          <form onSubmit={handleSubmit} className="sign-in-form">
+            <h2 className="title">Sign in</h2>
+            <div className="input-field">
+              <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+            </div>
+            <div className="input-field">
+              <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            </div>
+            <input type="submit" value="Login" className="btn solid" />
+          </form>
         </div>
-    </>
+      </div>
+
+      <div className="panels-container">
+        <div className="panel left-panel">
+          <div className="content">
+            <h3>WELCOME BACK</h3>
+            <p>
+              You don't have account please register, Enjoy services
+            </p>
+            <button className="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src={bg} className="image" alt="" />
+        </div>
+      </div>
+    </div>
 
 
+    // <>
+    //     <div className="wrappers">
+    //         <h1>Login</h1>
+    //         <form onSubmit={handleSubmit}>
+    //         <input type="text" placeholder="Username" required value={username} onChange={(e) => setUsername(e.target.value)}/>
+    //         <input type="password" placeholder="Your password" value={password} required onChange={(e) => setPassword(e.target.value)}/>
+    //         </form>
+    //         <button type='submit'>Login</button>
+    //     </div>
+    // </>
 
 
-    // <div className='login-popup'> 
-    //     <form className="login-popup-container" onSubmit={handleSubmit}>
-    //         <div className="login-popup-title">
-    //             <h2>{currState}</h2>
-    //             <img onClick={()=> setShowLogin(false)} alt="" />
-    //         </div>
-    //         <div className="login-popup-inputs">
-
-    //         {currState === "Login" && (
-    //             <>
-    //             <input type="text" placeholder="Username" required value={username} onChange={(e) => setUsername(e.target.value)}/>
-    //             <input type="password" placeholder="Your password" value={password} required onChange={(e) => setPassword(e.target.value)}/>
-    //             </>
-    //             )}
-
-    //             {/* Username & Password (Common for both Login & Signup) */}
-                
-    //         </div>
-    //         <button type='submit'>{currState === "Sign Up" ? "Create account" : "Login"}</button>
-    //         <div className="login-popup-condition">
-    //             <input type="checkbox" required/>
-    //             <p>By continuing, i agree to the terms of use & privacy policy.</p>
-    //         </div>
-    //         {/* {currState === "Login"
-    //         ?<p>Create a new account? <span onClick={()=> setCurrState("Sign Up")}>Click here</span></p>
-    //         :<p>Already have an account? <span onClick={()=> setCurrState("Login")}>Login here</span></p>
-    //         } */}
-    //     </form>
-    // </div>
   )
 }
 
