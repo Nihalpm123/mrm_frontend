@@ -1,0 +1,19 @@
+.searchbox{
+   padding: 30px 20px ;
+
+}
+.searchbox input{
+    width:300px;
+    height:40px;
+    border-bottom: 12px;
+    border: none;
+    background-color: rgb(237, 241, 241);
+}
+.searchproduct-actions{
+    display: flex;
+    gap: 12px;
+}
+.searchproduct-actions button{
+    margin:0;
+    
+}

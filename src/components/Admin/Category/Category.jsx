@@ -11,7 +11,6 @@ const Category = () => {
   const [categoryImage, setCategoryImage] = useState("");
   const [Hascategory, setHascategory] = useState(false);
   const [addcategoryOpen, setAddcategoryOpen] = useState(false);
-
   const [editOpen, setEditOpen] = useState(false)
   const [categoryId, setCategoryId] = useState("")
 

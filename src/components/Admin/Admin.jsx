@@ -6,18 +6,13 @@ import React, { useState, useEffect } from "react";
 import { IoMdContact } from "react-icons/io";
 import Sidebar from "./Sidebar/Sidebar";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-
 import { FaChevronDown } from "react-icons/fa";
-
-// import { Sidebar } from "lucide-react";
-// import SubCate from "./Category/SubCate";
-// import SubCateProduct from "./Category/SubCateProduct";
-// import Unit from "./Unit/Unit";
 import "./Admin.css";
 import Unit from "./Unit/Unit";
 import Product from "./Product/Product";
 import Subcategory from "./subcategory/Subcategory";
 import Category from "./Category/Category";
+import SearchProducts from "./SearchProducts/SearchProducts";
 
 const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -93,7 +88,7 @@ const Admin = () => {
           <Routes>
             <Route path="dashboard" element={<div>Dashboard</div>} />
              <Route path="category" element={<Category/>} />
-             <Route path="products" element={ <Product/>}/>
+             <Route path="products" element={ <SearchProducts/>}/>
              <Route path="Subcategory/:id" element={ <Subcategory/>}/>
              <Route path="viewproducts/:id" element={<Product/>}/>
             {/* <Route path="orders" element={<Orders />} />

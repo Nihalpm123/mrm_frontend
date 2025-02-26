@@ -107,7 +107,7 @@ const Subcategory = () => {
         setCategory((prevData)=> {
           return prevData.map((category)=>{
             if(category._id === dataStore._id){
-              return {...Category,...dataStore}
+              return {...category,...dataStore}
             }
             return category
           })
