@@ -17,6 +17,7 @@ const Product = () => {
   const [productCategory,setProductCategory]=useState(id || "")
 
   useEffect(()=>{
+    
     axios.get(`${server}/get-product-category/${productCategory}`).then((res)=>{
       const products=res.data.getproductId;
       if(products && products.length >0){

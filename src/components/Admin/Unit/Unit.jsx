@@ -1,17 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Unit.css";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { server } from "../../../server";
 
 const Unit = () => {
   const [unitaddOpen, setUnitAddopen] = useState(false);
-  const units = [
-    { unit: "MTR" },
-    { unit: "SETT" },
-    { unit: "LTR" },
-    { unit: "Roll" },
-    { unit: "No" },
-    { unit: "KG" },
-    { unit: "None of the above" },
-  ];
+  const [unit,setUnit]=useState([])
+
+  // useEffect(()=>{
+  //   axios.get(`${server}/get-unit`).then((res)=>
+      
+  // },[])
+  useEffect(()=>{
+    axios.get(`${server}/get-unit`).then((res)=>{
+      console.log(res);
+      setUnit(res.data)
+      
+    })
+  },[])
+  const handleDelete=()=>{
+    
+  }
+  
+  
+  const handleSubmit=(e)=>{
+      e.preventDefault();
+      toast.success("unit created!..");
+      setUnit("");
+      setUnitAddopen(false)
+  }
+
+  
   return (
     <div className="unit-container">
       <div className="Unitadd-btnWrappper">
@@ -33,18 +53,18 @@ const Unit = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody className="unitTable-bodywrapper">
-            {units.map((item, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{item.unit}</td>
-                <td className="action-box">
+          {unit.map((item,index)=>(
+            <tr>
+              <td>{index+1}</td>
+              <td>{item.unit}</td>
+              <td className="action-box">
                   <button className="actionedit-btn">Edit</button>
-                  <button className="actiondelete-btn">Delete</button>
+                  <button className="actiondelete-btn" onClick={()=>handleDelete(item._id)}>Delete</button>
                 </td>
-              </tr>
-            ))}
-          </tbody>
+              
+            </tr>
+          ))}
+         
         </table>
       </div>
       {unitaddOpen && (
@@ -56,10 +76,9 @@ const Unit = () => {
             </div>
             <div className="unitmodel-input">
               <label>Unit</label>
-              <input type="text" placeholder="unit" />
+              <input type="text" placeholder="unit" onChange={(e)=>setUnit(e.target.value)}/>
             </div>
-            
-              <button className="unitmodel-addbtn">Add</button>
+             <button type="submit" className="unitmodel-addbtn" onClick={handleSubmit}>Add</button>
             
           </div>
         </div>
