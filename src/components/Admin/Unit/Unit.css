@@ -26,16 +26,17 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    height: 89vh; /* Adjust height to fit page */
+   
+     /* Adjust height to fit page */
     width: 100%;
     padding: 10px;
 }
 
 /* Table styling */
-table {
+.unit-table {
     width: 100%; /* Adjust width */
      max-width: 1150px; /*Limit max width */
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
@@ -44,11 +45,11 @@ table {
 }
 
 /* Table headers */
-thead th {
+.unit-table  th {
     background-color: #1e293b; /* Light gray header */
     color: white;
     font-weight: 700;
-    padding: 12px;
+    padding: 5px;
     text-align: center;
     text-transform: uppercase;
     font-size: 13px;
@@ -68,16 +69,16 @@ tbody tr:last-child {
 
 /* Table cells */
 td {
-    margin: 10px 10px;
     font-size: 0.9rem;
+    text-align: center;
 }
 
 /* Action buttons */
 .action-box {
     display: flex;
     gap: 6px;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .actionedit-btn {

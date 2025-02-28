@@ -73,7 +73,7 @@ const Product = () => {
         <button onClick={()=>setProductadd(!productAdd)} className='upper-addbtn'>Add</button>
       </div>
        <div>
-        {Products && Products.length >0?(<table>
+        {Products && Products.length >0?(<table className='product-table'>
           <thead>
               <tr>
                 <th>Sl.no</th>

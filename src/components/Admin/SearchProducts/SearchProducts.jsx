@@ -42,13 +42,6 @@ const SearchProducts = () => {
     }
   }, [search, searchProducts]);
 
-  console.log(
-    productname,
-    productDescription,
-    productImage,
-    productMRP,
-    productquantity
-  );
 
   const handleEdit = (product) => {
     setProductname(product.productname);
@@ -62,6 +55,7 @@ const SearchProducts = () => {
     }));
     setProductimage(existingImages);
   };
+  
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     const newImages = files.map((file) =>
@@ -69,7 +63,7 @@ const SearchProducts = () => {
     );
     setProductimage([...newImages]);
   };
-  console.log(productImage);
+  
 
   const handleOpenEdit = async (e) => {
     e.preventDefault();
@@ -134,7 +128,7 @@ const SearchProducts = () => {
           <FaSearch />
         </button>
       </div>
-      <table>
+      <table className="product-table">
         <thead>
           <tr>
             <th>Sl.no</th>
