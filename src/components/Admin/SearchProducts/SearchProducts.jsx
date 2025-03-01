@@ -17,6 +17,8 @@ const SearchProducts = () => {
   const [productMRP, setProductMRP] = useState("");
   const [productEdit, setProductEdit] = useState(false);
   const [productId, setProductId] = useState("");
+  const [unit,setUnit]=useState("");
+  
 
   useEffect(() => {
     axios.get(`${server}/get-products`).then((res) => {
@@ -25,12 +27,7 @@ const SearchProducts = () => {
     });
   }, []);
 
-  // const keys = [
-  //   "productname",
-  //   "productDescription",
-  //   "productquantity",
-  //   "productMRP",
-  // ];
+ 
   useEffect(() => {
     if (!search) {
       setProduct(searchProducts);
@@ -48,6 +45,7 @@ const SearchProducts = () => {
     setProductdescription(product.productDescription);
     setProductQuantity(product.productquantity);
     setProductMRP(product.productMRP);
+    setUnit(product.unit)
     setProductId(product._id);
 
     const existingImages = product.productImage.map((img) => ({
@@ -71,9 +69,10 @@ const SearchProducts = () => {
   
     const updatedProducts = new FormData();
     updatedProducts.append("productname", productname);
-    updatedProducts.append("productDescription", productDescription); // ✅ Fixed typo
+    updatedProducts.append("productDescription", productDescription); 
     updatedProducts.append("productquantity", productquantity);
     updatedProducts.append("productMRP", productMRP);
+    updatedProducts.append("unit",unit);
   
     if (productImage.length > 0) {
       productImage.forEach((img) => updatedProducts.append("productImage", img.file || img));
@@ -135,6 +134,7 @@ const SearchProducts = () => {
             <th>Name</th>
             <th>Image</th>
             <th>Description</th>
+            <th>Unit</th>
             <th>Quantity</th>
             <th>M.R.P</th>
             <th>Actions</th>
@@ -149,6 +149,7 @@ const SearchProducts = () => {
                <img src={product.productImage[0]} className="img-preview"/>
               </td>
               <td>{product.productDescription}</td>
+              <td>{product.unit}</td>
               <td>{product.productquantity}</td>
               <td>{product.productMRP}</td>
               <td className="searchproduct-actions">

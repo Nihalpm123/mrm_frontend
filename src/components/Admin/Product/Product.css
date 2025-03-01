@@ -35,3 +35,8 @@
     font-size: 13px;
     border-bottom: 2px solid #ddd;
 }
+.unit-option{
+    width: auto;
+    background-color: #ddd;
+    color: black;
+}
