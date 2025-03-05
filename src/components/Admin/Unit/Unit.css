@@ -82,7 +82,7 @@ td {
 }
 
 .actionedit-btn {
-    background-color: #1d2a74; 
+    background-color: #f1d021; 
     color: white;
     border: none;
     width: 70px;
@@ -93,7 +93,7 @@ td {
 }
 
 .actiondelete-btn {
-    background-color: #ac0505; 
+    background-color: #c00f0f; 
     width:70px;
     color: white;
     border: none;
@@ -103,7 +103,7 @@ td {
     cursor: pointer;
 }
 .actionedit-btn:hover{
-    background-color: blue; 
+    background-color: #f8d214; 
     cursor: pointer;
 }
 .actiondelete-btn:hover{

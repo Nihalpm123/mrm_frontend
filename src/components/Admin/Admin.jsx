@@ -13,6 +13,7 @@ import Product from "./Product/Product";
 import Subcategory from "./subcategory/Subcategory";
 import Category from "./Category/Category";
 import SearchProducts from "./SearchProducts/SearchProducts";
+import Dealer from "../Dealers/Dealer";
 
 const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -91,8 +92,8 @@ const Admin = () => {
              <Route path="products" element={ <SearchProducts/>}/>
              <Route path="Subcategory/:id" element={ <Subcategory/>}/>
              <Route path="viewproducts/:id" element={<Product/>}/>
-            {/* <Route path="orders" element={<Orders />} />
-            <Route path="dealers" element={<AllUsers />} /> */}
+             {/* <Route path="orders" element={<Orders />} /> */}
+              <Route path="dealers" element={<Dealer />} /> 
             <Route path="unit" element={<Unit />}/> 
             {/* // <Route path="disabled product" element={<EditProducts />} />  */}
             
