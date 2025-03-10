@@ -45,9 +45,15 @@ const Category = () => {
   };
 
   const handleDelete=(id)=>{
-    axios.delete(`${server}/delete-category/${id}`).then((res)=>setCategory(
-      (data)=>data.filter((item)=>item._id!==id)
-    ))
+    if(
+      window.confirm("Are you sure you want to delete this category?")) {
+        axios.delete(`${server}/delete-category/${id}`).then((res)=>setCategory(
+          (data)=>data.filter((item)=>item._id!==id)
+        ))
+      }
+    
+    
+   
   }  
 
 
@@ -103,6 +109,7 @@ const Category = () => {
       
     });
   }
+  console.log(category);
   
 
   return (
