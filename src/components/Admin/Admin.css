@@ -29,7 +29,7 @@
     margin: 10px 10px;
 }
 .admin-icons{
-    background-color: rgb(2, 129, 59);
+    background-color: rgb(75, 75, 75);
     height:50px;
     width:100px;
     display: flex;
@@ -37,7 +37,7 @@
     align-items: center;
 }
 .admin-icons:hover{
-    background-color: rgb(9, 112, 28);
+    background-color: rgb(118, 117, 117);
 }
 .admin-icon,.down-icon{
     height:24px;
@@ -60,11 +60,12 @@
 }
 
 .header-logout{
-    background-color: rgb(234, 75, 7);
+    background-color: rgb(249, 248, 247);
+    color: rgb(0, 0, 0);
 }
 
 .header-logout:hover{
-    background-color: rgb(250, 88, 19);
+    background-color: rgb(110, 107, 106);
 }
 
 .header-wrapper{

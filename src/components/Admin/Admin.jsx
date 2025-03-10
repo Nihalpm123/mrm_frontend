@@ -14,6 +14,7 @@ import Subcategory from "./subcategory/Subcategory";
 import Category from "./Category/Category";
 import SearchProducts from "./SearchProducts/SearchProducts";
 import Dealer from "../Dealers/Dealer";
+import Dashboard from "./Dashboard/Dashboard";
 
 const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -87,7 +88,7 @@ const Admin = () => {
         {/* Main Content Area */}
         <div className="Routes">
           <Routes>
-            <Route path="dashboard" element={<div>Dashboard</div>} />
+            <Route path="dashboard" element={<Dashboard/>} />
              <Route path="category" element={<Category/>} />
              <Route path="products" element={ <SearchProducts/>}/>
              <Route path="Subcategory/:id" element={ <Subcategory/>}/>

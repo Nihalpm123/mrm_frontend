@@ -1,0 +1,22 @@
+.dashboard{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.items{
+    border: 1px solid #ccc;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.icon{
+    font-size: 40px;
+    color: #333;
+}
