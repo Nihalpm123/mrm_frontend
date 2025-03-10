@@ -35,8 +35,7 @@ const Product = () => {
       setUnitdata(res.data);
     });
   }, []);
- console.log(unit);
- 
+  console.log(unit);
 
   const handleImage = (e) => {
     if (e.target.files) {
@@ -58,13 +57,13 @@ const Product = () => {
     productImage.forEach((file) => {
       productForm.append("productImage", file);
     });
-    productForm.append("productquantity",productquantity);
-    productForm.append("productMRP",productMRP);
-    productForm.append("unit",unit);
+    productForm.append("productquantity", productquantity);
+    productForm.append("productMRP", productMRP);
+    productForm.append("unit", unit);
     if (productCategory) {
-      productForm.append("productCategory",productCategory);
+      productForm.append("productCategory", productCategory);
     }
-    axios.post(`${server}/add-product`,productForm, config).then((res) => {
+    axios.post(`${server}/add-product`, productForm, config).then((res) => {
       const response = res.data.product;
       setProducts((data) => [response, ...data]);
       toast.success("Products created!..");
@@ -125,66 +124,89 @@ const Product = () => {
         {productAdd && (
           <div className="Productmodel-wrapper">
             <form onSubmit={handleSubmit} className="productadd-form">
+              <h1>Add Product</h1>
               <button
                 className="modelclose-btn"
                 onClick={() => setProductadd(!productAdd)}
               >
                 X
               </button>
-              <label>Product Name:</label>
-              <input
-                type="text"
-                value={productname}
-                onChange={(e) => setProductname(e.target.value)}
-                required
-              />
-              <label>Product Description:</label>
-              <textarea
-                type="text"
-                value={productDescription}
-                onChange={(e) => setProductdescription(e.target.value)}
-                required
-              />
-              <label>Product Image:</label>
-              <input
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={handleImage}
-                required
-              />
-              <div>
-                {productImage.map((item) => (
-                  <img
-                    className="img-preview"
-                    src={URL.createObjectURL(item)}
+              <div className="inner-div">
+                <div>
+                <label>Product Name:</label>
+                  <input
+                    type="text"
+                    value={productname}
+                    onChange={(e) => setProductname(e.target.value)}
+                    required
                   />
-                ))}
+                </div>
+                <div>
+                  
+
+                  <label>Product Description:</label>
+                  <textarea
+                    type="text"
+                    value={productDescription}
+                    onChange={(e) => setProductdescription(e.target.value)}
+                    required
+                  />
+                </div>
               </div>
-              <label>Unit:</label>
-              <select value={unit} onChange={(e) => setUnit(e.target.value)}>
-                <option value=""></option>
-                {Unitdata.map((item,index) => (
-                  <option className="unit-option" key={index}>
-                    {item.unit}
-                  </option>
-                ))}
-              </select>
-              <label>Quantity:</label>
-              <input
-                type="text"
-                value={productquantity}
-                onChange={(e) => setProductQuantity(e.target.value)}
-                required
-              />
-              <label>M.R.P:</label>
-              <input
-                type="text"
-                value={productMRP}
-                onChange={(e) => setProductMRP(e.target.value)}
-                required
-              />
-              <button>Add</button>
+              <div className="inner-div">
+                <div>
+                <label>Product Image:</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  onChange={handleImage}
+                  required
+                />
+                
+                 <div>
+                  {productImage.map((item) => (
+                    <img
+                      className="img-preview"
+                      src={URL.createObjectURL(item)}
+                    />
+                  ))}
+                </div>
+                </div>
+                
+                
+               <div className="unit-div"><label>Unit:</label>
+                <select value={unit} onChange={(e) => setUnit(e.target.value)} className="select-unit">
+                  <option value="" ></option>
+                  {Unitdata.map((item, index) => (
+                    <option  key={index}>
+                      {item.unit}
+                    </option>
+                  ))}
+                </select></div>
+                
+              </div>
+              <div className="inner-div">
+                <div><label>Quantity:</label>
+                <input
+                  type="text"
+                  value={productquantity}
+                  onChange={(e) => setProductQuantity(e.target.value)}
+                  required
+                /></div>
+                <div>
+                <label>M.R.P:</label>
+                <input
+                  type="text"
+                  value={productMRP}
+                  onChange={(e) => setProductMRP(e.target.value)}
+                  required
+                />
+                </div>
+                
+              </div>
+
+              <button className="addcategory-btn">Add</button>
             </form>
           </div>
         )}

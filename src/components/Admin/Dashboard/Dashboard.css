@@ -20,3 +20,7 @@
     font-size: 40px;
     color: #333;
 }
+.dashboard-wrapper{
+    display: flex;
+    flex-direction: column;
+}

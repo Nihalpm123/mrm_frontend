@@ -34,13 +34,19 @@ margin:5px;
 .searchproduct-actions{
     display: flex;
     gap: 12px;
+    
 }
 .searchproduct-actions button{
     margin:0;
-    background-color: #050650;
+    background-color: white;
     size: 40px;
+    transition: transform 0.5s ease-in-out;
+    /* border: 2px solid #ddd; */
     
 }
 .searchproduct-actions button:hover{
-background-color: #04066a;
+    background-color: white;
+    color: black;
+    transform: scale(1.5); /* Slight zoom effect on hover */
+    border-color: #1a82c8;
 }
