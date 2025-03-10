@@ -27,6 +27,7 @@
   background: transparent;
   border: none;
   margin:0;
+  padding: 0;
   cursor: pointer;
   font-size: 20px;
   border-radius: 50%;
@@ -41,7 +42,6 @@
 .toggle-btn:focus {
   outline: none;
 }
-
 .menu-icon,
 .close-icon {
   width: 25px;
@@ -67,6 +67,7 @@
 
 .sidebar.collapsed .menu-item span {
   display: none; /* Hide text when collapsed */
+
 }
 
 .menu-item a {
@@ -81,6 +82,9 @@
 }
 .sidebar.collapsed .menu-icon {
   display: block; /* Ensures menu icon is shown */
+  margin: 0;
+ 
+  
 }
 .sidebar.collapsed .close-icon {
   display: none; /* Hides close icon in collapsed mode */

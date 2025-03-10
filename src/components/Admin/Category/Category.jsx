@@ -153,7 +153,11 @@ const Category = () => {
       {addcategoryOpen && (
         <div className="addcategory-wrapper">
           <form onSubmit={handleSubmit} className="addcategory-form">
-          <button className="modelclose-btn" onClick={()=>setAddcategoryOpen(!addcategoryOpen)}>X</button>
+            <div className="categorymodel_title">
+              <h2>Add Category</h2>
+            <button className="modelclose-btn" onClick={()=>setAddcategoryOpen(!addcategoryOpen)}>X</button>
+            </div>
+          
             <label>category name:</label>
             <input
               type="text"
@@ -191,6 +195,7 @@ const Category = () => {
         <div className="addcategory-wrapper">
           <form onSubmit={handleOpenEdit} className="addcategory-form">
             <div className="modelclose-wrapper">
+              <h2>Edit Category</h2>
                 <button className="modelclose-btn" onClick={()=>setEditOpen(!editOpen)}>X</button>
             </div>
             

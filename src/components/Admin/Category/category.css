@@ -1,16 +1,23 @@
 .addcategory-form{
     display: flex;
     flex-direction: column;
-    padding:0.9em 1.4em;
+    /* padding:0.9em 1.4em; */
+    justify-content: center;
     background-color: #ffffff;
-    color: black;
+    color: rgb(66, 62, 62);
     gap:6px;
+    width:30em;
+    height: 65vh;
+    align-items: flex-start;
     border-radius: 15px;
     position: relative;
     -webkit-box-shadow: 2px 1px 50px -2px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 1px 50px -2px rgba(0,0,0,0.75);
     box-shadow: 2px 1px 50px -2px rgba(0,0,0,0.75);
     
+}
+.addcategory-form input{
+    background-color: #efeeee;
 }
 .categoryimage-add{
     color: #060d17;
@@ -39,7 +46,7 @@
     height:15px;
 }
 .addcategory-btn{
-    background-color: #5c6067;
+    background-color: #1e293b;
 }
 .addcategory-btn:hover{
     background-color: rgb(99, 98, 98);
@@ -99,13 +106,14 @@
     display: flex;
 }
 .modelclose-btn{
-    margin:0px 90%;
+   margin:0;
     width:25px;
-    color: rgb(255, 253, 253);
+    color: rgb(31, 28, 28);
+    background-color: #ffffff;
 }
 .modelclose-btn:hover{
-    background-color: #151414 ;
-    color: azure;
+    color: rgb(31, 28, 28);
+    background-color: #ffffff;
 }
 .actionmanage-btn, .actionproduct-btn{
     background-color: #505052; 
@@ -122,4 +130,8 @@
 .actionmanage-btn:hover,.actionproduct-btn:hover{
     background-color: #747475;
     
+}
+.categorymodel_title{
+    display: flex;
+    gap:100px;
 }
