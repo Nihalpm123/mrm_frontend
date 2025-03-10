@@ -3,10 +3,10 @@
 
 }
 .product-table{
-    width: 100%; /* Adjust width */
+    width: 95%; /* Adjust width */
     max-width: 1150px; /*Limit max width */
-   /* margin-bottom: 60px; */
    border-collapse: collapse;
+margin:5px;
    border-radius: 10px;
    overflow: hidden;
    background: white;
@@ -37,5 +37,10 @@
 }
 .searchproduct-actions button{
     margin:0;
+    background-color: #050650;
+    size: 40px;
     
+}
+.searchproduct-actions button:hover{
+background-color: #04066a;
 }

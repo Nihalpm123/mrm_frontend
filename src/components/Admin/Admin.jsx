@@ -14,7 +14,11 @@ import Subcategory from "./subcategory/Subcategory";
 import Category from "./Category/Category";
 import SearchProducts from "./SearchProducts/SearchProducts";
 import Dealer from "../Dealers/Dealer";
+
 import Dashboard from "./Dashboard/Dashboard";
+
+import Order from "./Order/Order";
+
 
 const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -93,7 +97,7 @@ const Admin = () => {
              <Route path="products" element={ <SearchProducts/>}/>
              <Route path="Subcategory/:id" element={ <Subcategory/>}/>
              <Route path="viewproducts/:id" element={<Product/>}/>
-             {/* <Route path="orders" element={<Orders />} /> */}
+             <Route path="orders" element={<Order/>}/>
               <Route path="dealers" element={<Dealer />} /> 
             <Route path="unit" element={<Unit />}/> 
             {/* // <Route path="disabled product" element={<EditProducts />} />  */}
