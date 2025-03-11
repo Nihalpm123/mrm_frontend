@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { server } from "../../../server";
 import "./order.css"
+import { useNavigate } from "react-router-dom";
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
+  const navigate=useNavigate();
 
   useEffect(() => {
     axios.get(`${server}/get-order`).then((res) => {
@@ -12,6 +14,9 @@ const OrderList = () => {
     });
   }, []);
 
+  const handleVieworder=(id)=>{
+    navigate(`/admin/viewOrders/${id}`)
+  }
   return (
     <>
       <div className="category-main">
@@ -24,10 +29,6 @@ const OrderList = () => {
               <th>User ID</th>
               <th>Address</th>
               <th>Phone No</th>
-              {/* <th>Product Name</th>
-              <th>Unit</th>
-              <th>Quantity</th>
-              <th>Price</th> */}
               <th>Total</th>
               <th>Status</th>
               <th>Action</th>
@@ -41,9 +42,9 @@ const OrderList = () => {
                 <td>{order.userId}</td>
                 <td>{order.address}</td>
                 <td>{order.mobileNumber}</td>
-                <td>${order.TotalAmount}</td>
+                <td>{order.TotalAmount}</td>
                 <td>{order.status}</td>
-                <td className="action-box"><button>View Order</button></td>
+                <td className="action-box"><button onClick={()=>handleVieworder(order._id)}>View Order</button></td>
               </tr>
             )
             )}

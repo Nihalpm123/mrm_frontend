@@ -1,0 +1,13 @@
+.order-select{
+     width:110px;
+    height: 36px;
+}
+.status_update{
+    display: flex;
+    gap: 10px;
+}
+.status_updatebtn{
+    width:40%;
+    margin: 0;
+    background-color: #1a82c8;
+}

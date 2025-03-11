@@ -5,10 +5,12 @@ import { server } from "../../../server";
 import { FaUser, FaBoxOpen } from "react-icons/fa";
 import { FaFileInvoice } from "react-icons/fa6";
 import { MdOutlinePendingActions } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [dealers, setDealers] = useState([]);
   const [orders, setOrders] = useState([]);
+  const navigate=useNavigate();
 
   useEffect(() => {
     axios.get(`${server}/getusers`).then((res) => {
@@ -22,7 +24,9 @@ const Dashboard = () => {
     });
   }, []);
 
-  console.log(orders);
+  const handleVieworder=(id)=>{
+    navigate(`/admin/viewOrders/${id}`)
+  }
 
   return (
     <>
@@ -86,7 +90,7 @@ const Dashboard = () => {
                     <td>${order.TotalAmount}</td>
                     <td>{order.status}</td>
                     <td className="action-box">
-                      <button>View Order</button>
+                      <button onClick={()=>handleVieworder(order._id)}>View Order</button>
                     </td>
                   </tr>
                 ))}

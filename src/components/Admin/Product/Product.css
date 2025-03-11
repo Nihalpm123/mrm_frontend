@@ -67,8 +67,8 @@ textarea {
 
 /* Image preview styling */
 .img-preview {
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     border: 2px solid #ddd;
     border-radius: 5px;
     margin-top: 5px;

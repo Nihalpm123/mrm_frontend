@@ -1,9 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import EditProducts from "./AddProducts/EditProducts";
-// import AllUsers from "./Users/AllUsers";
-// import Category from "./Category/Category";
-// import Orders from "./Allorders/Orders";
-import { IoMdContact } from "react-icons/io";
 import Sidebar from "./Sidebar/Sidebar";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
@@ -14,10 +9,9 @@ import Subcategory from "./subcategory/Subcategory";
 import Category from "./Category/Category";
 import SearchProducts from "./SearchProducts/SearchProducts";
 import Dealer from "../Dealers/Dealer";
-
 import Dashboard from "./Dashboard/Dashboard";
-
 import Order from "./Order/Order";
+import Vieworder from "../ViewOrder/Vieworder";
 
 
 const Admin = () => {
@@ -97,6 +91,7 @@ const Admin = () => {
              <Route path="products" element={ <SearchProducts/>}/>
              <Route path="Subcategory/:id" element={ <Subcategory/>}/>
              <Route path="viewproducts/:id" element={<Product/>}/>
+             <Route path="viewOrders/:id" element={<Vieworder/>}/>
              <Route path="orders" element={<Order/>}/>
               <Route path="dealers" element={<Dealer />} /> 
             <Route path="unit" element={<Unit />}/> 
