@@ -22,7 +22,23 @@
 .categoryimage-add{
     color: #060d17;
 }
-
+.action-box {
+    display: flex;
+    gap: 10px;
+  }
+  .action-box button {
+    background-color: #418ec2;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  .action-box button:hover {
+    background-color: #2980b9;
+  }
 
 .addcategory-wrapper{
     position: fixed;
@@ -59,13 +75,21 @@
 }
 .categoryname{
     color:black;
+    font-size: 14px;
+   
 }
+.categoryImage:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    border-color: #3498db; /* Change border color on hover */
+  }
 .categoryImage{
-    height:100px;
-    width:100px;
+    height:60px;
+    width:60px;
     object-fit: cover;
     border-radius: 10px;
+    border: 2px solid #ddd;
     margin: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .upper-addbtn{
@@ -100,10 +124,17 @@
     font-weight: 700;
     padding: 5px;
     text-align: center;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 15px;
     border-bottom: 2px solid #ddd;
 }
+.category-table td {
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    /* border-bottom: 1px solid #ddd; */
+  }
 .modelclose-wrapper{
     display: flex;
 }
@@ -118,7 +149,7 @@
     background-color: #ffffff;
 }
 .actionmanage-btn, .actionproduct-btn{
-    background-color: #505052; 
+    
     color: white;
     border: none;
     width: auto;
@@ -129,11 +160,20 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.actionmanage-btn:hover,.actionproduct-btn:hover{
-    background-color: #747475;
-    
-}
+
 .categorymodel_title{
     display: flex;
     gap:100px;
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-table th, .category-table td {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .categoryImage {
+      height: 40px;
+      width: 40px;
+    }
+  }

@@ -26,3 +26,7 @@
     font-size: 40px;
     color: #064a9c;
 }
+.dashboard-wrapper{
+    display: flex;
+    flex-direction: column;
+}

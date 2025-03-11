@@ -17,8 +17,7 @@ const SearchProducts = () => {
   const [productMRP, setProductMRP] = useState("");
   const [productEdit, setProductEdit] = useState(false);
   const [productId, setProductId] = useState("");
-  const [unit,setUnit]=useState("");
-  
+  const [unit, setUnit] = useState("");
 
   useEffect(() => {
     axios.get(`${server}/get-products`).then((res) => {
@@ -27,7 +26,6 @@ const SearchProducts = () => {
     });
   }, []);
 
- 
   useEffect(() => {
     if (!search) {
       setProduct(searchProducts);
@@ -39,13 +37,12 @@ const SearchProducts = () => {
     }
   }, [search, searchProducts]);
 
-
   const handleEdit = (product) => {
     setProductname(product.productname);
     setProductdescription(product.productDescription);
     setProductQuantity(product.productquantity);
     setProductMRP(product.productMRP);
-    setUnit(product.unit)
+    setUnit(product.unit);
     setProductId(product._id);
 
     const existingImages = product.productImage.map((img) => ({
@@ -53,7 +50,7 @@ const SearchProducts = () => {
     }));
     setProductimage(existingImages);
   };
-  
+
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     const newImages = files.map((file) =>
@@ -61,36 +58,41 @@ const SearchProducts = () => {
     );
     setProductimage([...newImages]);
   };
-  
 
   const handleOpenEdit = async (e) => {
     e.preventDefault();
     const config = { headers: { "Content-Type": "multipart/form-data" } };
-  
+
     const updatedProducts = new FormData();
     updatedProducts.append("productname", productname);
-    updatedProducts.append("productDescription", productDescription); 
+    updatedProducts.append("productDescription", productDescription);
     updatedProducts.append("productquantity", productquantity);
     updatedProducts.append("productMRP", productMRP);
-    updatedProducts.append("unit",unit);
-  
+    updatedProducts.append("unit", unit);
+
     if (productImage.length > 0) {
-      productImage.forEach((img) => updatedProducts.append("productImage", img.file || img));
+      productImage.forEach((img) =>
+        updatedProducts.append("productImage", img.file || img)
+      );
     }
-  
+
     try {
-      const res = await axios.patch(`${server}/edit-product/${productId}`, updatedProducts, config);
+      const res = await axios.patch(
+        `${server}/edit-product/${productId}`,
+        updatedProducts,
+        config
+      );
       console.log("Updated Product Response:", res.data.updated);
-  
+
       if (res.data.message === "product details updated!") {
         const updatedProduct = res.data.updated;
-  
+
         setProduct((prevData) =>
-          prevData.map((prod) =>
-            prod._id === updatedProduct._id ? updatedProduct : prod // ✅ Updates the table immediately
+          prevData.map(
+            (prod) => (prod._id === updatedProduct._id ? updatedProduct : prod) // ✅ Updates the table immediately
           )
         );
-  
+
         toast.success("Product edited successfully!");
         setProductEdit(false);
       }
@@ -99,8 +101,6 @@ const SearchProducts = () => {
       toast.error("Failed to update product.");
     }
   };
-  
-    
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
@@ -146,7 +146,7 @@ const SearchProducts = () => {
               <td>{index + 1}</td>
               <td>{product.productname}</td>
               <td>
-               <img src={product.productImage[0]} className="img-preview"/>
+                <img src={product.productImage[0]} className="img-preview" />
               </td>
               <td>{product.productDescription}</td>
               <td>{product.unit}</td>
@@ -155,8 +155,8 @@ const SearchProducts = () => {
               <td className="searchproduct-actions">
                 <button>
                   <FaEdit
-                    color="white"
-                    size="12px"
+                    color="black"
+                    size="20px"
                     onClick={() => {
                       handleEdit(product);
                       setProductEdit(!productEdit);
@@ -165,8 +165,8 @@ const SearchProducts = () => {
                 </button>
                 <button>
                   <RiDeleteBin5Fill
-                    color="white"
-                    size="12px"
+                    color="black"
+                    size="20px"
                     onClick={() => handleDelete(product._id)}
                   />
                 </button>
@@ -178,55 +178,74 @@ const SearchProducts = () => {
       {productEdit && (
         <div className="Productmodel-wrapper">
           <form onSubmit={handleOpenEdit} className="productadd-form">
+            <h1>Edit Product</h1>
             <button
               className="modelclose-btn"
               onClick={() => setProductEdit(!productEdit)}
             >
               X
             </button>
-            <label>Product Name:</label>
-            <input
-              type="text"
-              value={productname}
-              onChange={(e) => setProductname(e.target.value)}
-            />
-            <label>Product Description:</label>
-            <textarea
-              type="text"
-              value={productDescription}
-              onChange={(e) => setProductdescription(e.target.value)}
-            />
-            <label>Product Image:</label>
+            <div className="inner-div">
+              <div>
+              <label>Product Name:</label>
+              <input
+                type="text"
+                value={productname}
+                onChange={(e) => setProductname(e.target.value)}
+              />
+              </div>
+             <div>
+             <label>Product Description:</label>
+              <textarea
+                type="text"
+                value={productDescription}
+                onChange={(e) => setProductdescription(e.target.value)}
+              />
+             </div>
+              
+            </div>
+            <div className="inner-div">
+                <div>
+                <label>Product Image:</label>
             <input
               type="file"
               accept="image/*"
               multiple
               onChange={handleImageChange}
             />
-            <div>
-              {productImage.length>0 ?( productImage.map((item, index) => (
-                <img
-                  className="img-preview"
-                  key={index}
-                  src={item.preview || item}//if no previewuse the existing image url
-                  alt="preview"
-                />
-              ))):(<p>no images selected</p>)
-             }
-            </div>
-            <label>Quantity:</label>
+            
+                </div>
+            
+           <div> <div>
+              {productImage.length > 0 ? (
+                productImage.map((item, index) => (
+                  <img
+                    className="img-preview"
+                    key={index}
+                    src={item.preview || item} //if no previewuse the existing image url
+                    alt="preview"
+                  />
+                ))
+              ) : (
+                <p>no images selected</p>
+              )}
+            </div></div>
+           </div>
+           <div className="inner-div"><div><label>Quantity:</label>
             <input
               type="text"
               value={productquantity}
               onChange={(e) => setProductQuantity(e.target.value)}
-            />
-            <label>M.R.P:</label>
+            /></div> 
+            <div> <label>M.R.P:</label>
             <input
               type="text"
               value={productMRP}
               onChange={(e) => setProductMRP(e.target.value)}
-            />
-            <button>Update</button>
+            /></div>
+           </div>
+           
+            <button className="addcategory-btn">Update</button>
           </form>
         </div>
       )}

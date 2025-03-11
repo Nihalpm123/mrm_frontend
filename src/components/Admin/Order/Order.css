@@ -1,3 +1,4 @@
+
 h2{
     margin-top: 20px;
     margin-left: 20px;
@@ -6,4 +7,14 @@ h2{
 .category-main{
     margin-top: 20px;
     margin-left: 10px;
+}
+.order-table{
+    font-size: 4px;
+}
+.order-title{
+    padding: 20px 10px 0px 10px;
+}
+.order-table td{
+    font-size: 13px;
+
 }
