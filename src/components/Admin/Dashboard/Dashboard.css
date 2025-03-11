@@ -6,7 +6,9 @@
 
 .items{
     border: 1px solid #ccc;
-    padding: 40px 60px;
+    width: 220px;
+    height: 150px;
+    padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -14,9 +16,13 @@
     align-items: center;
 }
 
-
+.details{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
 .icon{
     font-size: 40px;
-    color: #333;
+    color: #064a9c;
 }

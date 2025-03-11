@@ -40,27 +40,40 @@ const Dashboard = () => {
           <div className='icon'>
             <FaUser />
           </div> 
-          Dealers
-          <p>{dealers.length}</p>
+          <div className='details'>
+            <h4>Dealers</h4>
+            <p>{dealers.length}</p>
+          </div>
+          
         </div>
         <div className='items'>
           <div className='icon'>
             <FaFileInvoice />
           </div> 
-          orders
-          <p>{orders.length}</p>
+          <div className='details'>
+            <h4>Orders</h4>
+            <p>{dealers.length}</p>
+          </div>
         </div>
+
+
         <div className='items'>
           <div className='icon'>
             <FaBoxOpen />
           </div>
-          deliverd orders
+          <div className='details'>
+            <h4>Dealers</h4>
           </div>
+          </div>
+
+
         <div className='items'>
           <div className='icon'>
             <MdOutlinePendingActions />
           </div>
-          pending orders
+          <div className='details'>
+            <h4>Dealers</h4>
+          </div>
           </div>
     </div>
     </>
