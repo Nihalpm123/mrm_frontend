@@ -11,3 +11,10 @@
     margin: 0;
     background-color: #1a82c8;
 }
+.invoice-btn{
+    width:18%;
+    display: flex;
+    gap:10px;
+    margin-left:800px;
+    background-color: #1a82c8;
+}

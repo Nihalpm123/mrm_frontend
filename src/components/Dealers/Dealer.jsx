@@ -75,8 +75,9 @@ const Dealer = () => {
         +Add
       </button>
     </div> */}
+       <h1>Dealers</h1>
     <div className="category-main">
-      
+   
         <table className="category-table">
           <thead>
             <tr>

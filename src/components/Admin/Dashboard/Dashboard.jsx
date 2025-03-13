@@ -67,7 +67,7 @@ const Dashboard = () => {
                 <tr>
                   <th>Sl.No</th>
                   <th>Date</th>
-                  <th>User ID</th>
+                  <th>User Name</th>
                   <th>Address</th>
                   <th>Phone No</th>
                   {/* <th>Product Name</th>
@@ -84,7 +84,7 @@ const Dashboard = () => {
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{new Date(order.OrderDate).toLocaleDateString()}</td>
-                    <td>{order.userId}</td>
+                    <td>{order.userDetails.username}</td>
                     <td>{order.address}</td>
                     <td>{order.mobileNumber}</td>
                     <td>${order.TotalAmount}</td>

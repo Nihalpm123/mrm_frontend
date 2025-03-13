@@ -25,21 +25,23 @@ const OrderList = () => {
           <thead>
             <tr>
               <th>Sl.No</th>
+              <th>User name</th>
               <th>Date</th>
-              <th>User ID</th>
               <th>Address</th>
               <th>Phone No</th>
               <th>Total</th>
               <th>Status</th>
               <th>Action</th>
+              
             </tr>
           </thead>
           <tbody>
             {orders.map((order, index) =>(
               <tr key={index}>
                 <td >{index + 1}</td>
+                <td>{order.userDetails.username}</td>
                 <td>{new Date(order.OrderDate).toLocaleDateString()}</td>
-                <td>{order.userId}</td>
+                {/* <td>{order.userId}</td> */}
                 <td>{order.address}</td>
                 <td>{order.mobileNumber}</td>
                 <td>{order.TotalAmount}</td>
@@ -48,6 +50,7 @@ const OrderList = () => {
               </tr>
             )
             )}
+           
           </tbody>
         </table>
       </div>

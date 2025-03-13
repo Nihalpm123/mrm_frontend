@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar/Sidebar";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown} from "react-icons/fa";
 import "./Admin.css";
 import Unit from "./Unit/Unit";
 import Product from "./Product/Product";
@@ -12,6 +12,7 @@ import Dealer from "../Dealers/Dealer";
 import Dashboard from "./Dashboard/Dashboard";
 import Order from "./Order/Order";
 import Vieworder from "../ViewOrder/Vieworder";
+import AdminLogin from "../adminlogin/AdminLogin";
 
 
 const Admin = () => {
@@ -66,7 +67,7 @@ const Admin = () => {
               onClick={toggleDropdown}
               className="admin-icons"
             >
-              < IoMdContact  className="admin-icon" />
+              {/* < IoMdContact  className="admin-icon" /> */}
               <FaChevronDown className="down-icon" />
             </button>
             {dropdownOpen && (
@@ -94,7 +95,8 @@ const Admin = () => {
              <Route path="viewOrders/:id" element={<Vieworder/>}/>
              <Route path="orders" element={<Order/>}/>
               <Route path="dealers" element={<Dealer />} /> 
-            <Route path="unit" element={<Unit />}/> 
+            <Route path="unit" element={<Unit />}/>
+            {/* <Route path="logout" element={logout}/>  */}
             {/* // <Route path="disabled product" element={<EditProducts />} />  */}
             
           </Routes>
