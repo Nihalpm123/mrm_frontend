@@ -25,9 +25,9 @@ const Dashboard = () => {
   console.log(orders);
 
   return (
-    <>
-    <div className='dashboard'>
-        
+   <>
+   
+      <div className='dashboard'>
         <div className='items'>
           <div className='icon'>
             <FaUser />
@@ -44,7 +44,7 @@ const Dashboard = () => {
           </div> 
           <div className='details'>
             <h4>Orders</h4>
-            <p>{dealers.length}</p>
+            <p>{orders.length}</p>
           </div>
         </div>
 
@@ -54,9 +54,9 @@ const Dashboard = () => {
             <FaBoxOpen />
           </div>
           <div className='details'>
-            <h4>Dealers</h4>
+            <h4>Delivered</h4>
           </div>
-          </div>
+        </div>
 
 
         <div className='items'>
@@ -64,11 +64,12 @@ const Dashboard = () => {
             <MdOutlinePendingActions />
           </div>
           <div className='details'>
-            <h4>Dealers</h4>
+            <h4>Pending Orders</h4>
           </div>
-
+        </div> 
+      </div>
       <div className="dashboard-wrapper">
-        <div className="dashboard">
+        {/* <div className="dashboard">
           <div className="items">
             <div className="icon">
               <FaUser />
@@ -96,7 +97,7 @@ const Dashboard = () => {
             pending orders
           </div>
          
-        </div>
+        </div> */}
         <div className="category-main">
             <h2 className="order-title">Recent Orders</h2>
             <table className="category-table">
@@ -127,16 +128,16 @@ const Dashboard = () => {
                     <td>${order.TotalAmount}</td>
                     <td>{order.status}</td>
                     <td className="action-box">
-                      <button>View Order</button>
+                      <button className="view-btn">View Order</button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
- b8cc9108a62ff268101c61b179029a2d26bc8b82
+
           </div>
       </div>
-    </>
+    </> 
   );
 };
 

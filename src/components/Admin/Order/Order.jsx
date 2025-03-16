@@ -4,9 +4,6 @@ import { server } from "../../../server";
 
 import "./Order.css";
 
-import "./order.css"
-
-
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
 
@@ -47,13 +44,14 @@ const OrderList = () => {
                 <td>{order.mobileNumber}</td>
                 <td>${order.TotalAmount}</td>
                 <td>{order.status}</td>
-                <td className="action-box"><button>View Order</button></td>
+                <td className="action-box"><button className="view-btn">View Order</button></td>
               </tr>
             )
             )}
           </tbody>
         </table>
       </div>
+      
     </>
   );
 };
