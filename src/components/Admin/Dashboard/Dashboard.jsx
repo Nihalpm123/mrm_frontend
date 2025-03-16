@@ -35,9 +35,11 @@ const Dashboard = () => {
           <div className="items">
             <div className="icon">
               <FaUser />
+           
             </div>
             Dealers
-            <p>{dealers.length}</p>
+            <div> <p>{dealers.length}</p></div>
+           
           </div>
           <div className="items">
             <div className="icon">
@@ -87,7 +89,7 @@ const Dashboard = () => {
                     <td>{order.userDetails.username}</td>
                     <td>{order.address}</td>
                     <td>{order.mobileNumber}</td>
-                    <td>${order.TotalAmount}</td>
+                    <td>₹{order.TotalAmount}</td>
                     <td>{order.status}</td>
                     <td className="action-box">
                       <button onClick={()=>handleVieworder(order._id)}>View Order</button>

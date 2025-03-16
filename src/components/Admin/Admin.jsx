@@ -13,6 +13,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import Order from "./Order/Order";
 import Vieworder from "../ViewOrder/Vieworder";
 import AdminLogin from "../adminlogin/AdminLogin";
+import InvoicePreview from "../Invoice";
 
 
 const Admin = () => {
@@ -93,6 +94,7 @@ const Admin = () => {
              <Route path="Subcategory/:id" element={ <Subcategory/>}/>
              <Route path="viewproducts/:id" element={<Product/>}/>
              <Route path="viewOrders/:id" element={<Vieworder/>}/>
+             <Route path="viewinvoice" element={<InvoicePreview/>}/>
              <Route path="orders" element={<Order/>}/>
               <Route path="dealers" element={<Dealer />} /> 
             <Route path="unit" element={<Unit />}/>

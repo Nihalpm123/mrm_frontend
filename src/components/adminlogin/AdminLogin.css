@@ -1,11 +1,22 @@
 body{
     background: #e5eff9;
 }
-
+.loginwrapper{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
 .wrapper{
-    width: 330px;
+   
+    width: 30%;
     padding: 2rem 1rem;
-    margin: 240px auto;
+    /* margin: 240px auto; */
+
     background-color: #fff;
     border-radius: 10px;
     text-align: center;
@@ -18,8 +29,8 @@ h1{
     margin-bottom: 1.2rem;
 }
 
-form input{
-    width: 92%;
+.wrapper form input{
+    width: 100%;
     outline: none;
     border: 1px solid #fff;
     padding: 12px 20px;

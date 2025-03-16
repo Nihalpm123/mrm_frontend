@@ -1,16 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa";
 // import jsPDF from "jspdf";
 // import "jspdf-autotable";
 import { server } from "../../server";
 import "./ViewOrder.css";
+import InvoicePreview from "../Invoice";
 
 const Vieworder = () => {
   const [orders, setOrders] = useState([]);
   const { id } = useParams();
   const [status, setStatus] = useState("");
+  const navigate=useNavigate();
 
   useEffect(() => {
     axios.get(`${server}/get-order/${id}`).then((res) => {
@@ -30,7 +32,9 @@ const Vieworder = () => {
       );
     });
   };
-
+const handleInvoice=()=>{
+navigate("/admin/viewinvoice")
+}
  
   return (
     <>
@@ -95,12 +99,12 @@ const Vieworder = () => {
           )}
         </tbody>
       </table>
-      <button className="invoice-btn" >
+      <button  type="submit" onClick={handleInvoice}className="invoice-btn" >
         <FaArrowDown /> Download Invoice
+       
       </button>
     </>
   );
 };
 
 export default Vieworder;
-
