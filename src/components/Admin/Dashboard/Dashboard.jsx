@@ -132,11 +132,11 @@ const Dashboard = () => {
                     <td>${order.TotalAmount}</td>
                     <td>{order.status}</td>
                     <td className="action-box">
-<<<<<<< HEAD
-                      <button className="view-btn">View Order</button>
-=======
-                      <button onClick={()=>handleVieworder(order._id)}>View Order</button>
->>>>>>> 4859d557b0eba4da2100eb87b8247bd02e6b43f4
+
+                      <button className="view-btn" onClick={()=>handleVieworder(order._id)}>View Order</button>
+
+                      {/* <button onClick={()=>handleVieworder(order._id)}>View Order</button> */}
+
                     </td>
                   </tr>
                 ))}

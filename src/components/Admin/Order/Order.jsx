@@ -1,13 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { server } from "../../../server";
-<<<<<<< HEAD
 
-import "./Order.css";
-=======
-import "./order.css"
+import "./Order.css"
 import { useNavigate } from "react-router-dom";
->>>>>>> 4859d557b0eba4da2100eb87b8247bd02e6b43f4
+
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
@@ -51,11 +48,11 @@ const OrderList = () => {
                 <td>{order.mobileNumber}</td>
                 <td>{order.TotalAmount}</td>
                 <td>{order.status}</td>
-<<<<<<< HEAD
-                <td className="action-box"><button className="view-btn">View Order</button></td>
-=======
-                <td className="action-box"><button onClick={()=>handleVieworder(order._id)}>View Order</button></td>
->>>>>>> 4859d557b0eba4da2100eb87b8247bd02e6b43f4
+
+                <td className="action-box"><button onClick={()=>handleVieworder(order._id)} className="view-btn">View Order</button></td>
+
+                {/* <td className="action-box"><button onClick={()=>handleVieworder(order._id)}>View Order</button></td> */}
+
               </tr>
             )
             )}
