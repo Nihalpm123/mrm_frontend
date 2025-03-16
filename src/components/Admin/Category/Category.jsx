@@ -109,7 +109,7 @@ const Category = () => {
       
     });
   }
-  console.log(category);
+  
   
 
   return (

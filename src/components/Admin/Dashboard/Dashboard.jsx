@@ -5,10 +5,12 @@ import { server } from "../../../server";
 import { FaUser, FaBoxOpen } from "react-icons/fa";
 import { FaFileInvoice } from "react-icons/fa6";
 import { MdOutlinePendingActions } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [dealers, setDealers] = useState([]);
   const [orders, setOrders] = useState([]);
+  const navigate=useNavigate();
 
   useEffect(() => {
     axios.get(`${server}/getusers`).then((res) => {
@@ -22,7 +24,9 @@ const Dashboard = () => {
     });
   }, []);
 
-  console.log(orders);
+  const handleVieworder=(id)=>{
+    navigate(`/admin/viewOrders/${id}`)
+  }
 
   return (
    <>
@@ -105,7 +109,7 @@ const Dashboard = () => {
                 <tr>
                   <th>Sl.No</th>
                   <th>Date</th>
-                  <th>User ID</th>
+                  <th>User Name</th>
                   <th>Address</th>
                   <th>Phone No</th>
                   {/* <th>Product Name</th>
@@ -122,13 +126,17 @@ const Dashboard = () => {
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{new Date(order.OrderDate).toLocaleDateString()}</td>
-                    <td>{order.userId}</td>
+                    <td>{order.userDetails.username}</td>
                     <td>{order.address}</td>
                     <td>{order.mobileNumber}</td>
                     <td>${order.TotalAmount}</td>
                     <td>{order.status}</td>
                     <td className="action-box">
+<<<<<<< HEAD
                       <button className="view-btn">View Order</button>
+=======
+                      <button onClick={()=>handleVieworder(order._id)}>View Order</button>
+>>>>>>> 4859d557b0eba4da2100eb87b8247bd02e6b43f4
                     </td>
                   </tr>
                 ))}

@@ -1,11 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { server } from "../../../server";
+<<<<<<< HEAD
 
 import "./Order.css";
+=======
+import "./order.css"
+import { useNavigate } from "react-router-dom";
+>>>>>>> 4859d557b0eba4da2100eb87b8247bd02e6b43f4
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
+  const navigate=useNavigate();
 
   useEffect(() => {
     axios.get(`${server}/get-order`).then((res) => {
@@ -13,6 +19,9 @@ const OrderList = () => {
     });
   }, []);
 
+  const handleVieworder=(id)=>{
+    navigate(`/admin/viewOrders/${id}`)
+  }
   return (
     <>
       <div className="category-main">
@@ -21,33 +30,36 @@ const OrderList = () => {
           <thead>
             <tr>
               <th>Sl.No</th>
+              <th>User name</th>
               <th>Date</th>
-              <th>User ID</th>
               <th>Address</th>
               <th>Phone No</th>
-              {/* <th>Product Name</th>
-              <th>Unit</th>
-              <th>Quantity</th>
-              <th>Price</th> */}
               <th>Total</th>
               <th>Status</th>
               <th>Action</th>
+              
             </tr>
           </thead>
           <tbody>
             {orders.map((order, index) =>(
               <tr key={index}>
                 <td >{index + 1}</td>
+                <td>{order.userDetails.username}</td>
                 <td>{new Date(order.OrderDate).toLocaleDateString()}</td>
-                <td>{order.userId}</td>
+                {/* <td>{order.userId}</td> */}
                 <td>{order.address}</td>
                 <td>{order.mobileNumber}</td>
-                <td>${order.TotalAmount}</td>
+                <td>{order.TotalAmount}</td>
                 <td>{order.status}</td>
+<<<<<<< HEAD
                 <td className="action-box"><button className="view-btn">View Order</button></td>
+=======
+                <td className="action-box"><button onClick={()=>handleVieworder(order._id)}>View Order</button></td>
+>>>>>>> 4859d557b0eba4da2100eb87b8247bd02e6b43f4
               </tr>
             )
             )}
+           
           </tbody>
         </table>
       </div>
