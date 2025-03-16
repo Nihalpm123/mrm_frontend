@@ -29,9 +29,51 @@ const Dashboard = () => {
   }
 
   return (
-    <>
+   <>
+   
+      <div className='dashboard'>
+        <div className='items'>
+          <div className='icon'>
+            <FaUser />
+          </div> 
+          <div className='details'>
+            <h4>Dealers</h4>
+            <p>{dealers.length}</p>
+          </div>
+          
+        </div>
+        <div className='items'>
+          <div className='icon'>
+            <FaFileInvoice />
+          </div> 
+          <div className='details'>
+            <h4>Orders</h4>
+            <p>{orders.length}</p>
+          </div>
+        </div>
+
+
+        <div className='items'>
+          <div className='icon'>
+            <FaBoxOpen />
+          </div>
+          <div className='details'>
+            <h4>Delivered</h4>
+          </div>
+        </div>
+
+
+        <div className='items'>
+          <div className='icon'>
+            <MdOutlinePendingActions />
+          </div>
+          <div className='details'>
+            <h4>Pending Orders</h4>
+          </div>
+        </div> 
+      </div>
       <div className="dashboard-wrapper">
-        <div className="dashboard">
+        {/* <div className="dashboard">
           <div className="items">
             <div className="icon">
               <FaUser />
@@ -61,7 +103,7 @@ const Dashboard = () => {
             pending orders
           </div>
          
-        </div>
+        </div> */}
         <div className="category-main">
             <h2 className="order-title">Recent Orders</h2>
             <table className="category-table">
@@ -92,15 +134,20 @@ const Dashboard = () => {
                     <td>₹{order.TotalAmount}</td>
                     <td>{order.status}</td>
                     <td className="action-box">
-                      <button onClick={()=>handleVieworder(order._id)}>View Order</button>
+
+                      <button className="view-btn" onClick={()=>handleVieworder(order._id)}>View Order</button>
+
+                      {/* <button onClick={()=>handleVieworder(order._id)}>View Order</button> */}
+
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+
           </div>
       </div>
-    </>
+    </> 
   );
 };
 

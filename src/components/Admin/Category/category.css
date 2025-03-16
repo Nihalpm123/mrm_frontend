@@ -28,7 +28,6 @@
     gap: 10px;
   }
   .action-box button {
-    background-color: #418ec2;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -38,7 +37,7 @@
     transition: background 0.3s;
   }
   .action-box button:hover {
-    background-color: #2980b9;
+    /* background-color: #2980b9; */
   }
 
 .addcategory-wrapper{
@@ -150,7 +149,7 @@
     background-color: #ffffff;
 }
 .actionmanage-btn, .actionproduct-btn{
-    
+    background-color: #817e7e;
     color: white;
     border: none;
     width: auto;

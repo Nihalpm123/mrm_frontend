@@ -1,0 +1,16 @@
+.dealer-title{
+   font-size: 25px;
+   margin-left: 16px;
+}
+
+.category-table{
+    margin-top: 40px;
+}
+
+.actionedit-btn, .actiondelete-btn{
+    margin: 10px;
+}
+
+.actionmanage-btn, .actionproduct-btn{
+    margin: 20px;
+}

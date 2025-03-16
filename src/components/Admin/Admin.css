@@ -30,7 +30,7 @@
     margin: 10px 10px;
 }
 .admin-icons{
-    background-color: rgb(75, 75, 75);
+    background-color: #05798b;
     height:50px;
     width:100px;
     display: flex;
@@ -38,16 +38,15 @@
     align-items: center;
 }
 .admin-icons:hover{
-    background-color: rgb(118, 117, 117);
+    background-color: #046574;
 }
 .admin-icon,.down-icon{
-    height:24px;
-    width:24px;
-    border: 1px solid black;
-    border-radius: 50%;
+    height:26px;
+    width:26px;
 }
 .admin-icon:hover,.down-icon:hover{
-    background-color: rgb(0, 0, 0);
+    background-color: #024651;
+    border-radius: 50%;
 }
 .dashboard-title{
     color:rgb(36, 36, 71);
@@ -61,12 +60,12 @@
 }
 
 .header-logout{
-    background-color: rgb(249, 248, 247);
+    background-color: rgb(230, 229, 229);
     color: rgb(0, 0, 0);
 }
 
 .header-logout:hover{
-    background-color: rgb(110, 107, 106);
+    background-color: rgb(244, 242, 242);
 }
 
 .header-wrapper{
