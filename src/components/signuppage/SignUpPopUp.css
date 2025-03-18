@@ -24,6 +24,7 @@ input {
   overflow-y: auto; /* Allows scrolling inside the form */
 }
 .container {
+  
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centers content */

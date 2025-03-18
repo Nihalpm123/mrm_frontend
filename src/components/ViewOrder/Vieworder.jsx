@@ -7,6 +7,7 @@ import autoTable from "jspdf-autotable";
 import { server } from "../../server";
 import "./ViewOrder.css";
 
+
 const ViewOrder = () => {
     const [order, setOrder] = useState(null);
     const { id } = useParams();
@@ -33,29 +34,68 @@ const ViewOrder = () => {
       const doc = new jsPDF();
     
       // Header Section
+      const img = new Image();
+      img.src = "/mrmlogo.png"; // ✅ Correct path from "public" folder
+      
+      img.onload = function () {
+        doc.addImage(img, "PNG", 4, 4, 50, 30); // Add image to PDF
+
+         // Position for bullets at the top-right side
+    const pageWidth = doc.internal.pageSize.width; // Get page width
+    const bulletX = pageWidth - 65; // Adjust X position near right margin
+    const bulletY = 5; // Adjust Y position
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+
+    // Add checkbox-style bullet points
+    doc.text("Original for Recipient", bulletX, bulletY);
+    doc.text("Duplicate for Transporter", bulletX, bulletY + 5);
+    doc.text("Triplicate for Supplier", bulletX, bulletY + 10);
+
+    
+        // Continue generating the invoice **after the image is loaded**
+        addTextAndTable(doc);
+      };
+    };
+
+    const addTextAndTable = (doc) => {
+
       doc.setFont("helvetica", "bold");
       doc.setFontSize(18);
-      doc.text("MRM Garden Foodstuff Trading LLC", 80, 15);
-      doc.setFontSize(8);
+      doc.text("MRM Garden Foodstuff Trading ", 60, 35);
+      doc.text("LLC", 90, 40);
+      doc.setFontSize(14);
       doc.setFont("helvetica", "normal");
-      doc.text("MRM Garden Foodstuff Trading LLC", 70, 25);
-      doc.text("Sama Building 504, AL BARSHA1, DUBAI, UAE", 60, 30);
-      doc.text("Ph: +971588779925 | Email: sameermrm9925@gmail.com", 50, 35);
-      doc.text("SALE TRN: 100601424300003", 90, 40);
+      doc.text("Sama Building 504, AL BARSHA1, DUBAI, UAE", 60, 50);
+      doc.text("Ph: +971588779925  Email: sameermrm9925@gmail.com", 50, 55);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(12);
+      doc.text("SALE ", 100, 63);
+      doc.setFontSize(11);
+      doc.setFont("helvetica", "bold");
+      doc.text("TRN: 100601424300003", 150, 63);
     
       // Invoice Details Section
-      doc.setFont("helvetica", "bold");
-      doc.text(`Invoice No: ${order._id || "N/A"}`, 150, 25);
-      doc.text(`Invoice Date: ${new Date(order?.OrderDate).toLocaleDateString() || "N/A"}`, 150, 30);
-      // doc.text(`Order No: ${order.orderNumber || "N/A"}`, 150, 35);
-      // doc.text(`Pay Mode: CASH`, 150, 40);
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(11);
+      doc.text(`Invoice No: ${order._id || "N/A"}`, 5, 70);
+      doc.text(`Invoice Date: ${new Date(order?.OrderDate).toLocaleDateString() || "N/A"}`, 5, 75);
+      doc.text(`Order No: ${order.orderNumber || "N/A"}`, 105, 70);
+      doc.text(`Order Date: ${new Date(order?.OrderDate).toLocaleDateString() || "N/A"}`, 105, 75);
+      doc.text(`State:`, 5, 80);
+      doc.text(`State code:`, 35, 80);
+      doc.text(`Pay Mode: CASH`, 60, 80);
     
       // Receiver and Consignee Details
-      doc.text("Details of Receiver | Billed to:", 20, 55);
+      doc.text("Details of Receiver | Billed to:", 5, 90);
+      
       doc.setFont("helvetica", "normal");
-      doc.text(`Customer: ${order.userDetails?.username || "N/A"}`, 20, 60);
-      doc.text(`Phone: ${order.mobileNumber || "N/A"}`, 20, 65);
-      doc.text(`TRN: ${order.userDetails?.TRNno || "N/A"}`, 20, 70);
+      doc.text(`Customer: ${order.userDetails?.username || "N/A"}`, 5, 100);
+      doc.text(",", 5, 95);
+      doc.text(`Ph: ${order.mobileNumber || "N/A"}`, 5, 105);
+      doc.text(`TRN: ${order.userDetails?.TRNno || "N/A"}`,5, 110);
+      doc.text("Details of Consignee | Shipped to:", 105, 90);
     
       // doc.setFont("helvetica", "bold");
       // doc.text("Details of Consignee | Shipped to:", 120, 55);
@@ -86,23 +126,23 @@ const ViewOrder = () => {
       ]);
     
       autoTable(doc, {
-        startY: 80,
+        startY: 120,
         head: [tableColumnHeaders],
         body: tableData,
         theme: "striped",
-        headStyles: { fillColor: [0, 123, 255], textColor: [255, 255, 255], fontStyle: "bold" },
-        alternateRowStyles: { fillColor: [240, 240, 240] },
+        headStyles: { fillColor: [255, 255, 255], textColor: [0,0,0], fontStyle: "bold" },
+        alternateRowStyles: { fillColor: [255, 255, 255] },
         styles: { fontSize: 8 }
       });
     
-      const finalY = doc.lastAutoTable.finalY + 10;
+      const finalY = doc.lastAutoTable.finalY + 0;
     
       // Summary Section
       doc.setFont("helvetica", "bold");
-      doc.text(`Total Before VAT: ${order.TotalAmount?.toFixed(2) || "0.00"}`, 20, finalY);
-      doc.text(`VAT Amount: ${(order.TotalAmount * 0.05).toFixed(2) || "0.00"}`, 20, finalY + 5);
-      doc.text(`VAT Inclusive Amount: ${(order.TotalAmount * 1.05).toFixed(2) || "0.00"}`, 20, finalY + 10);
-      doc.text(`Balance Due: ${(order.TotalAmount * 1.05).toFixed(2) || "0.00"}`, 20, finalY + 20);
+      doc.text(`Total Before VAT: ${order.TotalAmount?.toFixed(2) || "0.00"}`, 5, finalY);
+      doc.text(`VAT Amount: ${(order.TotalAmount * 0.05).toFixed(2) || "0.00"}`, 5, finalY + 5);
+      doc.text(`VAT Inclusive Amount: ${(order.TotalAmount * 1.05).toFixed(2) || "0.00"}`, 5, finalY + 10);
+      doc.text(`Balance Due: ${(order.TotalAmount * 1.05).toFixed(2) || "0.00"}`, 5, finalY + 20);
     
       // Convert Total to Words
       const numberToWords = (num) => {
@@ -132,8 +172,8 @@ const ViewOrder = () => {
       // Footer Section
       doc.setFont("helvetica", "italic");
       doc.setFontSize(10);
-      doc.text("Thanks for doing business with us!", 20,150);
-      doc.text("Authorised Signature", 150,160);
+      doc.text("Thanks for doing business with us!", 20,250);
+      doc.text("Authorised Signature", 150,270);
     
       // Save the PDF
       doc.save(`invoice_${order?._id || "order"}.pdf`);
