@@ -11,6 +11,11 @@ const Dashboard = () => {
   const [dealers, setDealers] = useState([]);
   const [orders, setOrders] = useState([]);
   const navigate=useNavigate();
+  
+  const delivered=orders.filter((order)=>order.status==="delivered");
+  const pending=orders.filter((order)=>order.status==="pending");
+  const processing=orders.filter((order)=>order.status==="processing");
+
 
   useEffect(() => {
     axios.get(`${server}/getusers`).then((res) => {
@@ -59,6 +64,7 @@ const Dashboard = () => {
           </div>
           <div className='details'>
             <h4>Delivered</h4>
+            <p>{delivered.length}</p>
           </div>
         </div>
 
@@ -69,6 +75,7 @@ const Dashboard = () => {
           </div>
           <div className='details'>
             <h4>Pending Orders</h4>
+            <p>{pending.length}</p>
           </div>
         </div> 
       </div>
