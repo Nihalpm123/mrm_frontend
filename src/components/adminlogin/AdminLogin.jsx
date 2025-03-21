@@ -33,7 +33,7 @@ const AdminLogin = () => {
 
   return (
 
-    <>
+    <div className="loginwrapper">
         <div className="wrapper">
             <h1>Admin Login</h1>
             <form onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ const AdminLogin = () => {
             </form>
            
         </div>
-    </>
+    </div>
   )
 }
 

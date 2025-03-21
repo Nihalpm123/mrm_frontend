@@ -1,3 +1,4 @@
+
 .addcategory-form{
     display: flex;
     flex-direction: column;
@@ -106,7 +107,7 @@
 }
 
 .category-table{
-    margin: 20px 7px;
+    margin: 20px 15px;
     width: 100%; /* Adjust width */
     max-width: 1150px; /*Limit max width */
    /* margin-bottom: 60px; */

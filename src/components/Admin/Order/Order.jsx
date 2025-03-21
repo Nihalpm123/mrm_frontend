@@ -12,9 +12,12 @@ const OrderList = () => {
 
   useEffect(() => {
     axios.get(`${server}/get-order`).then((res) => {
+      console.log(res.data);
+      
       setOrders(res.data.getOrder);
     });
   }, []);
+
 
   const handleVieworder=(id)=>{
     navigate(`/admin/viewOrders/${id}`)

@@ -19,13 +19,20 @@ input {
   overflow: hidden;
 }
 
-.forms-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.form-container {
+  max-height: 90vh; /* Ensures the form doesn't exceed the screen height */
+  overflow-y: auto; /* Allows scrolling inside the form */
 }
+.container {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content */
+  align-items: center;
+  height: 100vh; /* Makes sure it takes the full screen height */
+}
+
+
 
 .signin-signup {
   position: absolute;
@@ -410,5 +417,11 @@ form.sign-in-form {
   .container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .form-container {
+    width: 100%;
+    padding: 10px;
   }
 }
