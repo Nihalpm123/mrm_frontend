@@ -30,15 +30,15 @@
 }
 
 .icon{
-    font-size: 40px;
+    font-size: 45px;
     color: #064a9c;
 }
 h4{
-    font-size: 15px;
+    font-size: 16px;
 }
 
-p{
-    font-size: 20px;
+.box-p{
+    font-size: 30px;
     font-weight: 600;
     margin-top: 12px;
 }
@@ -51,7 +51,7 @@ p{
 .category-table th{
     background-color: #ffffff;
     color: #000;
-    height: 40px;
+    height: 30px;
 }
 
 .category-table td{
@@ -59,7 +59,7 @@ p{
 }
 
 .order-title{
-    font-size: 25px;
+    font-size: 23px;
     margin: 0px 20px;
 }
 

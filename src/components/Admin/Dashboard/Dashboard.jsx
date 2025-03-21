@@ -43,7 +43,7 @@ const Dashboard = () => {
           </div> 
           <div className='details'>
             <h4>Dealers</h4>
-            <p>{dealers.length}</p>
+            <p className="box-p">{dealers.length}</p>
           </div>
           
         </div>
@@ -53,7 +53,7 @@ const Dashboard = () => {
           </div> 
           <div className='details'>
             <h4>Orders</h4>
-            <p>{orders.length}</p>
+            <p className="box-p">{orders.length}</p>
           </div>
         </div>
 

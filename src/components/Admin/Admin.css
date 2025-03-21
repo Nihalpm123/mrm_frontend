@@ -60,12 +60,12 @@
 }
 
 .header-logout{
-    background-color: rgb(230, 229, 229);
+    background-color: rgb(216, 215, 215);
     color: rgb(0, 0, 0);
 }
 
 .header-logout:hover{
-    background-color: rgb(244, 242, 242);
+    background-color: rgb(212, 212, 212);
 }
 
 .header-wrapper{
