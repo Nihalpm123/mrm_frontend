@@ -188,7 +188,7 @@ const Category = () => {
                 onChange={(e) => setHascategory(e.target.checked)}
                 
               />
-              <p>Has subcategory</p>
+              <p className="sub-p">Has subcategory</p>
             </div>
 
             <button type="submit" className="addcategory-btn">

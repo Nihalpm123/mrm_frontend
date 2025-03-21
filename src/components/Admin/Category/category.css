@@ -24,7 +24,6 @@
 }
 .action-box {
     display: flex;
-    gap: 10px;
   }
   .action-box button {
     color: #fff;
@@ -35,9 +34,9 @@
     font-size: 14px;
     transition: background 0.3s;
   }
-  .action-box button:hover {
-    /* background-color: #2980b9; */
-  }
+  /* .action-box button:hover {
+    background-color: #2980b9;
+  } */
 
 .addcategory-wrapper{
     position: fixed;
@@ -107,7 +106,7 @@
 }
 
 .category-table{
-    margin: 20px 15px;
+    margin: 20px 7px;
     width: 100%; /* Adjust width */
     max-width: 1150px; /*Limit max width */
    /* margin-bottom: 60px; */
@@ -155,11 +154,17 @@
     padding: 7px 11px;
     margin-bottom: 10px;
     margin-top: 38px;
-    font-size: 0.9rem;
+    font-size: 10px;
     border-radius: 5px;
     cursor: pointer;
+    width: 170px;
 }
 
+.sub-p{
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: -2px;
+}
 .categorymodel_title{
     display: flex;
     gap:100px;
