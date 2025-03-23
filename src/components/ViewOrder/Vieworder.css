@@ -14,8 +14,8 @@
 .invoice-btn{
     width:14%;
     display: flex;
-    gap:10px;
-    margin-left:999px;
+    /* gap:8px; */
+    margin-left:75%;
     padding: 11px;
     background-color: #1a82c8;
 }
