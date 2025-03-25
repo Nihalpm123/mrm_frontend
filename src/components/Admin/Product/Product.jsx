@@ -99,6 +99,7 @@ const Product = () => {
                   <th>Unit</th>
                   <th>Quantity</th>
                   <th>M.R.P</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -113,6 +114,11 @@ const Product = () => {
                     <td>{item.unit}</td>
                     <td>{item.productquantity}</td>
                     <td>{item.productMRP}</td>
+                    <td  className="action-box">
+                      <button>Add variant</button>
+                      <button>Add Image</button>
+                      <button>Disable</button>
+                    </td>
                   </tr>
                 ))}
               </tbody>

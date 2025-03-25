@@ -11,7 +11,7 @@ const AdminLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${server}/admin-login`,{
+    axios.post(`${server}/login`,{
       username,
       password
     }).then((res)=>{

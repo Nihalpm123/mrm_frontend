@@ -31,14 +31,14 @@ function Sidebar() {
     { icon: <TbRulerMeasure />, label: "Unit", section: "unit" },
     { icon: <BsBagXFill />, label: "Disabled product", section: "disabled-product" },
     { icon: <BsExclamationCircle />, label: "Disabled variant", section: "disabled-product" },
-    { icon: <MdLogout />, label: "Logout", section: "logout" },
+    // { icon: <MdLogout />, label: "Logout", section: "logout" },
   ];
 
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       {/* Sidebar Title & Toggle Button */}
       <div className="menu-title">
-        {!isCollapsed && <div className="menutitle-inner"><h2>MRMgarden </h2></div>
+        {!isCollapsed && <div className="menutitle-inner"><img src="/mrmlogo.png" className="mrmlogo"/></div>
          }
         <button className="toggle-btn" onClick={toggleSidebar}>
           {isCollapsed ? <Bars3Icon  className="menu-icon"/> : <XMarkIcon className="close-icon" />}

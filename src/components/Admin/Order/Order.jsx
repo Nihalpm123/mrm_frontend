@@ -30,7 +30,7 @@ const OrderList = () => {
           <thead>
             <tr>
               <th>Sl.No</th>
-              <th>User name</th>
+              <th>Name</th>
               <th>Date</th>
               <th>Address</th>
               <th>Phone No</th>
@@ -50,7 +50,20 @@ const OrderList = () => {
                 <td>{order.address}</td>
                 <td>{order.mobileNumber}</td>
                 <td>{order.TotalAmount}</td>
-                <td>{order.status}</td>
+                <td
+                    className={`status ${
+                      order.status === "delivered"
+                        ? "status-delivered"
+                        : order.status === "processing"
+                        ? "status-processing"
+                        : order.status === "pending"
+                        ? "status-pending"
+                        : "status-cancelled"
+                    }`}
+                  >
+                    {order.status}
+                  </td>
+
 
                 <td className="action-box"><button onClick={()=>handleVieworder(order._id)} className="view-btn">View Order</button></td>
 

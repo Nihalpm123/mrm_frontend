@@ -19,3 +19,12 @@
     padding: 11px;
     background-color: #1a82c8;
 }
+.pending{
+    color:#856404;
+}
+.processing{
+    color: #004085;
+}
+.delivered{
+    color: #155724;
+}

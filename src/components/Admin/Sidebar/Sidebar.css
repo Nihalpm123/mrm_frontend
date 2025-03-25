@@ -93,3 +93,15 @@
 .sidebar.collapsed .close-icon {
   display: none; /* Hides close icon in collapsed mode */
 }
+.mrmlogo{
+  width:80%;
+  height:60%;
+ 
+}
+/* .menutitle-inner{
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height:100px;
+  background-color: aqua;
+} */

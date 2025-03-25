@@ -31,7 +31,7 @@ const Admin = () => {
     // }
     localStorage.clear();
     // window.location.reload() // Clear stored data
-    navigate("/adminlogin");
+    navigate("/userlogin");
   };
 
   // Toggle Dropdown

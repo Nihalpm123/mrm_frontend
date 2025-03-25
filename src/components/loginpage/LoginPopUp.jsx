@@ -19,8 +19,10 @@ const LoginPopUp = () => {
             }
         ).then((res)=> {
             console.log(res);
+            const token=res.data.token;
+            localStorage.setItem("token",token);
             toast.success("login success")
-            
+            window.location.reload()
         })
     }
 

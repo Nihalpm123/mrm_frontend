@@ -115,21 +115,24 @@ const Category = () => {
   return (
     <div>
       <div className="upper-addbox">
+        
         <button
           className="upper-addbtn"
           onClick={() => setAddcategoryOpen(!addcategoryOpen)}
         >
           +Add
         </button>
+
       </div>
+      <h1>All Category:</h1>
       <div className="category-main">
         {category && category.length > 0 ? (
           <table className="category-table">
             <thead>
               <tr>
                 <th>Sl.No</th>
-                <th>Category Name</th>
-                <th>Category Image</th>
+                <th>Name</th>
+                <th>Image</th>
                 <th>Actions</th>
               </tr>
             </thead>
